@@ -131,6 +131,8 @@
 <layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
@@ -503,11 +505,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="4" x="3.2512" y="-2.2606" drill="1.016" diameter="1.8796"/>
 <text x="-2.54" y="3.81" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 </package>
-<package name="TRIM_POT">
-<pad name="2" x="0" y="2.54" drill="1" diameter="1.8796"/>
-<pad name="3" x="0" y="-2.54" drill="1" diameter="1.8796"/>
-<pad name="1" x="5.08" y="0" drill="1" diameter="1.8796"/>
-</package>
 </packages>
 </library>
 <library name="max1771">
@@ -530,6 +527,22 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pad name="8" x="-3.81" y="3.81" drill="0.8128" diameter="1.7272" shape="octagon"/>
 <text x="-3.175" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <text x="-5.715" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+</package>
+</packages>
+</library>
+<library name="adafruit">
+<packages>
+<package name="TRIM-3386">
+<pad name="2" x="0" y="-2.8575" drill="0.9" diameter="1.778"/>
+<pad name="1" x="-2.54" y="-2.8575" drill="0.9" diameter="1.778"/>
+<pad name="3" x="2.54" y="-2.8575" drill="0.9" diameter="1.778"/>
+<wire x1="-4.7625" y1="-4.7625" x2="4.7625" y2="-4.7625" width="0.127" layer="21"/>
+<wire x1="4.7625" y1="-4.7625" x2="4.7625" y2="4.7625" width="0.127" layer="21"/>
+<wire x1="4.7625" y1="4.7625" x2="-4.7625" y2="4.7625" width="0.127" layer="21"/>
+<wire x1="-4.7625" y1="4.7625" x2="-4.7625" y2="-4.7625" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="3.302" width="0.127" layer="21"/>
+<text x="-5.08" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="6.35" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -718,11 +731,21 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U3" library="ec2" package="EC2" value="EC2" x="24.13" y="21.59" rot="R180"/>
-<element name="U4" library="ec2" package="EC2" value="EC2" x="10.16" y="21.59" rot="R180"/>
-<element name="U2" library="SparkFun-Boards" package="ARDUINO_PRO_MINI" value="ARDUINO_PRO_MINI" x="59.69" y="48.26" rot="R270"/>
-<element name="U5" library="ad623" package="AD623" value="AD623" x="24.13" y="45.72" rot="R180"/>
-<element name="U6" library="ad623" package="AD623" value="AD623" x="10.16" y="45.72" rot="R180"/>
+<element name="U3" library="ec2" package="EC2" value="EC2" x="24.13" y="21.59" rot="R180">
+<attribute name="PN" value="399-11029-5-ND" x="24.13" y="21.59" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="U4" library="ec2" package="EC2" value="EC2" x="10.16" y="21.59" rot="R180">
+<attribute name="PN" value="399-11029-5-ND" x="10.16" y="21.59" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="U2" library="SparkFun-Boards" package="ARDUINO_PRO_MINI" value="ARDUINO_PRO_MINI" x="59.69" y="48.26" rot="R270">
+<attribute name="PN" value="1568-1055-ND" x="59.69" y="48.26" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
+<element name="U5" library="ad623" package="AD623" value="AD623" x="24.13" y="45.72" rot="R180">
+<attribute name="PN" value="AD623ANZ-ND" x="24.13" y="45.72" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
+<element name="U6" library="ad623" package="AD623" value="AD623" x="10.16" y="45.72" rot="R180">
+<attribute name="PN" value="AD623ANZ-ND" x="10.16" y="45.72" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 <element name="Q1" library="SparkFun-DiscreteSemi" package="TO-92" value="" x="24.13" y="6.35" rot="R180">
 <attribute name="PROD_ID" value="TRANS-09536" x="24.13" y="6.35" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
@@ -748,7 +771,9 @@ Please make sure your boards conform to these design rules.</description>
 <element name="C8" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="10uF" x="85.598" y="42.418" rot="R90">
 <attribute name="PN" value="490-7202-1-ND" x="89.408" y="38.608" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="U1" library="SparkFun-Displays" package="LCD-16X2_NOHOLES" value="LCD-16X2NOHOLES" x="48.26" y="19.05" rot="MR0"/>
+<element name="U1" library="SparkFun-Displays" package="LCD-16X2_NOHOLES" value="LCD-16X2NOHOLES" x="48.26" y="19.05" rot="MR0">
+<attribute name="PN" value="1528-1502-ND" x="48.26" y="19.05" size="1.778" layer="28" rot="MR0" display="off"/>
+</element>
 <element name="J12" library="SparkFun-Connectors" package="BANANA_CONN" value="" x="7.62" y="62.23"/>
 <element name="J7" library="SparkFun-Connectors" package="BANANA_CONN" value="" x="88.9" y="62.23"/>
 <element name="J8" library="SparkFun-Connectors" package="BANANA_CONN" value="" x="72.644" y="62.23"/>
@@ -763,24 +788,29 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PROD_ID" value=" SWCH-08441" x="91.44" y="53.34" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
 <element name="L1" library="SparkFun-Passives" package="RLB0912" value="" x="76.2" y="24.13" rot="R90"/>
-<element name="C1" library="SparkFun-Passives" package="CPOL-RADIAL-100UF-25V" value="" x="62.23" y="25.4" rot="R90"/>
-<element name="C2" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="68.58" y="26.67" rot="R270"/>
+<element name="C1" library="SparkFun-Passives" package="CPOL-RADIAL-100UF-25V" value="" x="66.04" y="25.4" rot="R90"/>
+<element name="C2" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="58.42" y="24.13"/>
 <element name="C3" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="44.45" y="10.16" rot="R180"/>
 <element name="T1" library="SparkFun-DiscreteSemi" package="TO220V" value="MOSFET-NCHANNELFQP30N06L" x="66.04" y="16.51" rot="R270">
 <attribute name="PROD_ID" value="TRANS-10060" x="66.04" y="16.51" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="PN" value="FDP33N25-ND" x="66.04" y="16.51" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="D3" library="SparkFun-DiscreteSemi" package="DIODE-1N4001" value="" x="72.39" y="8.89" rot="R270"/>
+<element name="D3" library="SparkFun-DiscreteSemi" package="DIODE-1N4001" value="" x="72.39" y="8.89" rot="R270">
+<attribute name="PN" value="EGP20FCT-ND" x="72.39" y="8.89" size="1.778" layer="27" rot="R270" display="off"/>
+</element>
 <element name="RSENSE" library="SparkFun-Passives" package="AXIAL-0.4" value="0R050" x="53.34" y="8.89" rot="R180"/>
-<element name="VR1" library="SparkFun-Electromechanical" package="TRIM_POT" value="5K" x="40.64" y="16.51"/>
 <element name="R8" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="45.72" y="24.13"/>
 <element name="R9" library="SparkFun-Passives" package="AXIAL-0.4" value="1M5" x="35.56" y="8.89" rot="R90"/>
 <element name="C6" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="44.45" y="3.81" rot="R90"/>
 <element name="C4" library="SparkFun-Passives" package="CPOL-RADIAL-100UF-25V" value="" x="62.23" y="5.08" rot="R270"/>
-<element name="U$1" library="max1771" package="DIP-08" value="MAX1771" x="54.61" y="16.51" rot="R180"/>
+<element name="U$1" library="max1771" package="DIP-08" value="MAX1771" x="54.61" y="16.51" rot="R180">
+<attribute name="PN" value="MAX1771CPA+-ND" x="54.61" y="16.51" size="1.778" layer="27" rot="R180" display="off"/>
+</element>
 <element name="R10" library="SparkFun-Passives" package="AXIAL-0.4" value="1.02K" x="40.64" y="50.8" rot="R270"/>
 <element name="R11" library="SparkFun-Passives" package="AXIAL-0.4" value="1.02K" x="35.56" y="50.8" rot="R270"/>
 <element name="C10" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="35.56" y="40.64" rot="R270"/>
 <element name="C9" library="SparkFun-Passives" package="CAP-PTH-SMALL" value="" x="40.64" y="40.64" rot="R270"/>
+<element name="TM1" library="adafruit" package="TRIM-3386" value="" x="43.18" y="16.51" rot="R270"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1157,19 +1187,20 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 <signal name="N$6">
 <contactref element="R9" pad="P$2"/>
-<contactref element="VR1" pad="3"/>
-<wire x1="35.56" y1="13.97" x2="40.64" y2="13.97" width="0.3048" layer="1"/>
+<contactref element="TM1" pad="3"/>
+<wire x1="35.56" y1="13.97" x2="40.3225" y2="13.97" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$8">
-<contactref element="VR1" pad="2"/>
 <contactref element="R8" pad="P$1"/>
-<wire x1="40.64" y1="24.13" x2="40.64" y2="19.05" width="0.3048" layer="1"/>
+<contactref element="TM1" pad="1"/>
+<wire x1="40.64" y1="24.13" x2="40.64" y2="19.3675" width="0.3048" layer="1"/>
+<wire x1="40.64" y1="19.3675" x2="40.3225" y2="19.05" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$15">
-<contactref element="VR1" pad="1"/>
 <contactref element="U$1" pad="3"/>
-<wire x1="45.72" y1="16.51" x2="49.53" y2="16.51" width="0.4064" layer="1"/>
 <wire x1="49.53" y1="16.51" x2="53.34" y2="20.32" width="0.4064" layer="1"/>
+<contactref element="TM1" pad="2"/>
+<wire x1="40.3225" y1="16.51" x2="49.53" y2="16.51" width="0.3048" layer="1"/>
 </signal>
 <signal name="SHDN">
 <contactref element="U$1" pad="4"/>
