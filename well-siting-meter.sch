@@ -5055,15 +5055,23 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="PN" value="PN2222AFS-ND"/>
 </part>
 <part name="D1" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="PTH">
-<attribute name="PN" value="1N4001FSCT-ND"/>
+<attribute name="PN" value="1N4001-TPMSCT-ND"/>
 </part>
 <part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="PTH">
-<attribute name="PN" value="1N4001FSCT-ND"/>
+<attribute name="PN" value="1N4001-TPMSCT-ND"/>
 </part>
-<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K"/>
-<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K"/>
-<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K"/>
-<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K"/>
+<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
+<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
+<part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
+<part name="R4" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -5073,11 +5081,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1.02K"/>
-<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="11K"/>
+<part name="R5" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="2.05K">
+<attribute name="PN" value="2.05KXBK-ND"/>
+</part>
+<part name="R6" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="100K">
+<attribute name="PN" value="100KXBK-ND"/>
+</part>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="VIN" device=""/>
-<part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1W" value="1"/>
+<part name="R7" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1W" value="0R050">
+<attribute name="PN" value="696-1731-ND"/>
+</part>
 <part name="GND10" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY9" library="SparkFun-Aesthetics" deviceset="VIN" device=""/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="VIN" device=""/>
@@ -5088,10 +5102,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="SUPPLY13" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C7" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="10uF">
-<attribute name="PN" value="490-7202-1-ND"/>
+<attribute name="PN" value="445-173437-1-ND"/>
 </part>
 <part name="C8" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="10uF">
-<attribute name="PN" value="490-7202-1-ND"/>
+<attribute name="PN" value="445-173437-1-ND"/>
 </part>
 <part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="V_BATT" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="V_BATT" device=""/>
@@ -5103,12 +5117,24 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY11" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
-<part name="J12" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
-<part name="J7" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
-<part name="J8" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
-<part name="J9" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
-<part name="J10" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
-<part name="J11" library="SparkFun-Connectors" deviceset="BANANA_CONN" device=""/>
+<part name="J12" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1665-ND"/>
+</part>
+<part name="J7" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1664-ND"/>
+</part>
+<part name="J8" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1665-ND"/>
+</part>
+<part name="J9" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1664-ND"/>
+</part>
+<part name="J10" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1665-ND"/>
+</part>
+<part name="J11" library="SparkFun-Connectors" deviceset="BANANA_CONN" device="">
+<attribute name="PN" value="1568-1664-ND"/>
+</part>
 <part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device=""/>
 <part name="S1" library="SparkFun-Electromechanical" deviceset="SWITCH-MOMENTARY-2" device="PTH">
@@ -5117,28 +5143,52 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="S2" library="SparkFun-Electromechanical" deviceset="SWITCH-MOMENTARY-2" device="PTH">
 <attribute name="PN" value="SW406-ND"/>
 </part>
-<part name="C1" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1"/>
-<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="PTH"/>
-<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="PTH"/>
+<part name="C1" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="100uF, 35V">
+<attribute name="PN" value="1572-1306-ND"/>
+</part>
+<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
+<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
 <part name="T1" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="FQP30N06L">
 <attribute name="PN" value="FDP33N25-ND"/>
 </part>
 <part name="D3" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="PTH">
 <attribute name="PN" value="EGP20FCT-ND"/>
 </part>
-<part name="RSENSE" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1W" value="0R050"/>
-<part name="R8" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K"/>
-<part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1M5"/>
-<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH"/>
-<part name="C4" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1"/>
+<part name="RSENSE" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1W" value="0R050">
+<attribute name="PN" value="696-1731-ND"/>
+</part>
+<part name="R8" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
+<part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1M">
+<attribute name="PN" value="1.00MXBK-ND"/>
+</part>
+<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf, 250V">
+<attribute name="PN" value="445-173449-1-ND"/>
+</part>
+<part name="C4" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="4u7, 250V">
+<attribute name="PN" value="399-6091-ND"/>
+</part>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="U$1" library="max1771" deviceset="MAX1771" device="">
+<part name="U7" library="max1771" deviceset="MAX1771" device="">
 <attribute name="PN" value="MAX1771CPA+-ND"/>
 </part>
-<part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1.02K"/>
-<part name="R11" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1.02K"/>
-<part name="C10" library="SparkFun-Passives" deviceset="CAP" device="PTH"/>
-<part name="C9" library="SparkFun-Passives" deviceset="CAP" device="PTH"/>
+<part name="R10" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="31.6K">
+<attribute name="PN" value="31.6KXBK-ND"/>
+</part>
+<part name="R11" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="31.6K">
+<attribute name="PN" value="31.6KXBK-ND"/>
+</part>
+<part name="C10" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
+<part name="C9" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="TM1" library="adafruit" deviceset="TRIM" device="3386"/>
@@ -5178,10 +5228,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="D2" gate="G$1" x="193.04" y="170.18">
 <attribute name="PN" x="193.04" y="170.18" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R1" gate="G$1" x="170.18" y="116.84" rot="R270"/>
-<instance part="R2" gate="G$1" x="170.18" y="101.6" rot="R270"/>
-<instance part="R3" gate="G$1" x="88.9" y="157.48"/>
-<instance part="R4" gate="G$1" x="157.48" y="157.48"/>
+<instance part="R1" gate="G$1" x="170.18" y="116.84" rot="R270">
+<attribute name="PN" x="170.18" y="116.84" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R2" gate="G$1" x="170.18" y="101.6" rot="R270">
+<attribute name="PN" x="170.18" y="101.6" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R3" gate="G$1" x="88.9" y="157.48">
+<attribute name="PN" x="88.9" y="157.48" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R4" gate="G$1" x="157.48" y="157.48">
+<attribute name="PN" x="157.48" y="157.48" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY2" gate="G$1" x="170.18" y="134.62"/>
 <instance part="GND2" gate="1" x="170.18" y="91.44"/>
 <instance part="GND3" gate="1" x="101.6" y="147.32"/>
@@ -5191,11 +5249,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="SUPPLY7" gate="G$1" x="195.58" y="96.52"/>
 <instance part="GND6" gate="1" x="195.58" y="104.14"/>
 <instance part="GND7" gate="1" x="195.58" y="63.5"/>
-<instance part="R5" gate="G$1" x="205.74" y="137.16"/>
-<instance part="R6" gate="G$1" x="205.74" y="96.52"/>
+<instance part="R5" gate="G$1" x="205.74" y="137.16">
+<attribute name="PN" x="205.74" y="137.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R6" gate="G$1" x="205.74" y="96.52">
+<attribute name="PN" x="205.74" y="96.52" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND9" gate="1" x="101.6" y="30.48"/>
 <instance part="SUPPLY5" gate="G$1" x="116.84" y="86.36"/>
-<instance part="R7" gate="G$1" x="182.88" y="119.38" rot="R90"/>
+<instance part="R7" gate="G$1" x="182.88" y="119.38" rot="R90">
+<attribute name="PN" x="182.88" y="119.38" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="GND10" gate="1" x="177.8" y="121.92"/>
 <instance part="SUPPLY9" gate="G$1" x="109.22" y="157.48"/>
 <instance part="SUPPLY10" gate="G$1" x="147.32" y="147.32"/>
@@ -5221,12 +5285,24 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </instance>
 <instance part="GND11" gate="1" x="142.24" y="43.18"/>
 <instance part="SUPPLY11" gate="G$1" x="139.7" y="88.9"/>
-<instance part="J12" gate="G$1" x="167.64" y="50.8" rot="MR0"/>
-<instance part="J7" gate="G$1" x="83.82" y="106.68" rot="MR0"/>
-<instance part="J8" gate="G$1" x="83.82" y="101.6" rot="MR0"/>
-<instance part="J9" gate="G$1" x="167.64" y="66.04" rot="MR0"/>
-<instance part="J10" gate="G$1" x="167.64" y="60.96" rot="MR0"/>
-<instance part="J11" gate="G$1" x="167.64" y="55.88" rot="MR0"/>
+<instance part="J12" gate="G$1" x="167.64" y="50.8" rot="MR0">
+<attribute name="PN" x="167.64" y="50.8" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="J7" gate="G$1" x="83.82" y="106.68" rot="MR0">
+<attribute name="PN" x="83.82" y="106.68" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="J8" gate="G$1" x="83.82" y="101.6" rot="MR0">
+<attribute name="PN" x="83.82" y="101.6" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="J9" gate="G$1" x="167.64" y="66.04" rot="MR0">
+<attribute name="PN" x="167.64" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="J10" gate="G$1" x="167.64" y="60.96" rot="MR0">
+<attribute name="PN" x="167.64" y="60.96" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
+<instance part="J11" gate="G$1" x="167.64" y="55.88" rot="MR0">
+<attribute name="PN" x="167.64" y="55.88" size="1.778" layer="96" rot="MR0" display="off"/>
+</instance>
 <instance part="GND13" gate="1" x="93.98" y="139.7"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="V" x="147.32" y="0"/>
@@ -5238,9 +5314,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <attribute name="NAME" x="81.28" y="152.4" size="1.778" layer="95"/>
 <attribute name="PN" x="83.82" y="149.86" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C1" gate="G$1" x="25.4" y="60.96"/>
-<instance part="C2" gate="G$1" x="33.02" y="58.42"/>
-<instance part="C3" gate="G$1" x="40.64" y="58.42"/>
+<instance part="C1" gate="G$1" x="25.4" y="60.96">
+<attribute name="PN" x="25.4" y="60.96" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C2" gate="G$1" x="33.02" y="58.42">
+<attribute name="PN" x="33.02" y="58.42" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C3" gate="G$1" x="40.64" y="58.42">
+<attribute name="PN" x="40.64" y="58.42" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="T1" gate="G$1" x="88.9" y="71.12" smashed="yes">
 <attribute name="NAME" x="93.98" y="73.66" size="1.778" layer="95"/>
 <attribute name="PN" x="88.9" y="71.12" size="1.778" layer="96" display="off"/>
@@ -5248,19 +5330,37 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="D3" gate="G$1" x="93.98" y="83.82">
 <attribute name="PN" x="93.98" y="83.82" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="RSENSE" gate="G$1" x="88.9" y="55.88" rot="R270"/>
-<instance part="R8" gate="G$1" x="101.6" y="43.18" rot="R270"/>
-<instance part="R9" gate="G$1" x="101.6" y="76.2" rot="R270"/>
-<instance part="C6" gate="G$1" x="116.84" y="55.88"/>
-<instance part="C4" gate="G$1" x="109.22" y="58.42"/>
+<instance part="RSENSE" gate="G$1" x="88.9" y="55.88" rot="R270">
+<attribute name="PN" x="88.9" y="55.88" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R8" gate="G$1" x="101.6" y="43.18" rot="R270">
+<attribute name="PN" x="101.6" y="43.18" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R9" gate="G$1" x="101.6" y="76.2" rot="R270">
+<attribute name="PN" x="101.6" y="76.2" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="C6" gate="G$1" x="116.84" y="55.88">
+<attribute name="PN" x="116.84" y="55.88" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C4" gate="G$1" x="109.22" y="58.42">
+<attribute name="PN" x="109.22" y="58.42" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND1" gate="1" x="63.5" y="45.72"/>
-<instance part="U$1" gate="G$1" x="63.5" y="63.5">
+<instance part="U7" gate="G$1" x="63.5" y="63.5">
 <attribute name="PN" x="63.5" y="63.5" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R10" gate="G$1" x="215.9" y="121.92"/>
-<instance part="R11" gate="G$1" x="215.9" y="81.28"/>
-<instance part="C10" gate="G$1" x="223.52" y="73.66"/>
-<instance part="C9" gate="G$1" x="223.52" y="114.3"/>
+<instance part="R10" gate="G$1" x="215.9" y="121.92">
+<attribute name="PN" x="215.9" y="121.92" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R11" gate="G$1" x="215.9" y="81.28">
+<attribute name="PN" x="215.9" y="81.28" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C10" gate="G$1" x="223.52" y="73.66">
+<attribute name="PN" x="223.52" y="73.66" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C9" gate="G$1" x="223.52" y="114.3">
+<attribute name="PN" x="223.52" y="114.3" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="GND14" gate="1" x="223.52" y="106.68"/>
 <instance part="GND15" gate="1" x="223.52" y="66.04"/>
 <instance part="TM1" gate="G$1" x="101.6" y="58.42" rot="R180"/>
@@ -5375,7 +5475,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="45.72" y1="53.34" x2="40.64" y2="53.34" width="0.1524" layer="91"/>
 <junction x="33.02" y="53.34"/>
 <junction x="40.64" y="53.34"/>
-<pinref part="U$1" gate="G$1" pin="AGND"/>
+<pinref part="U7" gate="G$1" pin="AGND"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
@@ -5397,7 +5497,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="63.5" y1="50.8" x2="63.5" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="U7" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C10" gate="G$1" pin="2"/>
@@ -5519,6 +5619,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="J9" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="66.04" x2="180.34" y2="66.04" width="0.1524" layer="91"/>
+<label x="172.72" y="66.04" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="I2" class="0">
@@ -5530,6 +5631,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="J10" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="60.96" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
+<label x="172.72" y="60.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IRET" class="0">
@@ -5694,6 +5796,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="J12" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="50.8" x2="180.34" y2="50.8" width="0.1524" layer="91"/>
+<label x="172.72" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V1" class="0">
@@ -5705,6 +5808,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="J11" gate="G$1" pin="1"/>
 <wire x1="170.18" y1="55.88" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
+<label x="172.72" y="55.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VREF" class="0">
@@ -5777,7 +5881,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <junction x="25.4" y="66.04"/>
 <wire x1="63.5" y1="83.82" x2="66.04" y2="83.82" width="0.1524" layer="91"/>
 <junction x="63.5" y="83.82"/>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="U7" gate="G$1" pin="VCC"/>
 <junction x="25.4" y="83.82"/>
 <pinref part="SUPPLY8" gate="G$1" pin="V_BATT"/>
 <wire x1="25.4" y1="83.82" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
@@ -5894,7 +5998,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <wire x1="48.26" y1="71.12" x2="40.64" y2="71.12" width="0.1524" layer="91"/>
 <label x="40.64" y="71.12" size="1.778" layer="95"/>
-<pinref part="U$1" gate="G$1" pin="SHDN"/>
+<pinref part="U7" gate="G$1" pin="SHDN"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="A2"/>
@@ -5907,7 +6011,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="48.26" y1="66.04" x2="40.64" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="66.04" x2="40.64" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="REF"/>
+<pinref part="U7" gate="G$1" pin="REF"/>
 </segment>
 </net>
 <net name="N$9" class="0">
@@ -5924,7 +6028,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="T1" gate="G$1" pin="G"/>
 <wire x1="78.74" y1="71.12" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="EXT"/>
+<pinref part="U7" gate="G$1" pin="EXT"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -5937,7 +6041,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="78.74" y1="66.04" x2="83.82" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="66.04" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="63.5" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="CS"/>
+<pinref part="U7" gate="G$1" pin="CS"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -5957,7 +6061,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="N$15" class="0">
 <segment>
 <wire x1="78.74" y1="58.42" x2="96.52" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="FB"/>
+<pinref part="U7" gate="G$1" pin="FB"/>
 <pinref part="TM1" gate="G$1" pin="S"/>
 </segment>
 </net>
