@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,19 +39,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -145,18 +145,18 @@
 <library name="ec2">
 <packages>
 <package name="EC2">
-<pad name="10" x="-2.54" y="1.27" drill="0.8"/>
-<pad name="9" x="-2.54" y="-1.27" drill="0.8"/>
-<pad name="8" x="-2.54" y="-3.81" drill="0.8"/>
-<pad name="5" x="2.54" y="-3.81" drill="0.8"/>
-<pad name="4" x="2.54" y="-1.27" drill="0.8"/>
-<pad name="3" x="2.54" y="1.27" drill="0.8"/>
-<pad name="1" x="2.54" y="6.35" drill="0.8"/>
-<pad name="12" x="-2.54" y="6.35" drill="0.8"/>
-<wire x1="-3.81" y1="7.62" x2="3.81" y2="7.62" width="0.127" layer="21"/>
-<wire x1="3.81" y1="7.62" x2="3.81" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="3.81" y1="-7.62" x2="-3.81" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="-3.81" y1="-7.62" x2="-3.81" y2="7.62" width="0.127" layer="21"/>
+<pad name="10" x="-2.54" y="1.27" drill="1.016" diameter="1.8796"/>
+<pad name="9" x="-2.54" y="-1.27" drill="1.016" diameter="1.8796"/>
+<pad name="8" x="-2.54" y="-3.81" drill="1.016" diameter="1.8796"/>
+<pad name="5" x="2.54" y="-3.81" drill="1.016" diameter="1.8796"/>
+<pad name="4" x="2.54" y="-1.27" drill="1.016" diameter="1.8796"/>
+<pad name="3" x="2.54" y="1.27" drill="1.016" diameter="1.8796"/>
+<pad name="1" x="2.54" y="6.35" drill="1.016" diameter="1.8796"/>
+<pad name="12" x="-2.54" y="6.35" drill="1.016" diameter="1.8796"/>
+<wire x1="-3.81" y1="7.62" x2="3.81" y2="7.62" width="0.3048" layer="21"/>
+<wire x1="3.81" y1="7.62" x2="3.81" y2="-7.62" width="0.3048" layer="21"/>
+<wire x1="3.81" y1="-7.62" x2="-3.81" y2="-7.62" width="0.3048" layer="21"/>
+<wire x1="-3.81" y1="-7.62" x2="-3.81" y2="7.62" width="0.3048" layer="21"/>
 <text x="-3.81" y="7.62" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.81" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -369,18 +369,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <library name="ad623">
 <packages>
 <package name="AD623">
-<pad name="1" x="-5.08" y="3.81" drill="0.8"/>
-<pad name="2" x="-5.08" y="1.27" drill="0.8"/>
-<pad name="3" x="-5.08" y="-1.27" drill="0.8"/>
-<pad name="4" x="-5.08" y="-3.81" drill="0.8"/>
-<pad name="5" x="5.08" y="-3.81" drill="0.8"/>
-<pad name="6" x="5.08" y="-1.27" drill="0.8"/>
-<pad name="7" x="5.08" y="1.27" drill="0.8"/>
-<pad name="8" x="5.08" y="3.81" drill="0.8"/>
-<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.127" layer="21"/>
-<wire x1="5.08" y1="5.08" x2="5.08" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.127" layer="21"/>
-<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.127" layer="21"/>
+<pad name="1" x="-5.08" y="3.81" drill="1.016" diameter="1.8796" shape="octagon"/>
+<pad name="2" x="-5.08" y="1.27" drill="1.016" diameter="1.8796"/>
+<pad name="3" x="-5.08" y="-1.27" drill="1.016" diameter="1.8796"/>
+<pad name="4" x="-5.08" y="-3.81" drill="1.016" diameter="1.8796"/>
+<pad name="5" x="5.08" y="-3.81" drill="1.016" diameter="1.8796"/>
+<pad name="6" x="5.08" y="-1.27" drill="1.016" diameter="1.8796"/>
+<pad name="7" x="5.08" y="1.27" drill="1.016" diameter="1.8796"/>
+<pad name="8" x="5.08" y="3.81" drill="1.016" diameter="1.8796"/>
+<wire x1="-5.08" y1="5.08" x2="5.08" y2="5.08" width="0.3048" layer="21"/>
+<wire x1="5.08" y1="5.08" x2="5.08" y2="-5.08" width="0.3048" layer="21"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.3048" layer="21"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="5.08" width="0.3048" layer="21"/>
 <text x="-5.08" y="5.08" size="1.27" layer="25">&gt;NAME</text>
 <text x="-5.08" y="-6.35" size="1.27" layer="27">&gt;VALUE</text>
 </package>
@@ -4978,18 +4978,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
-<library name="murata1400">
+<library name="misc">
 <packages>
-<package name="MURATA1400">
-<pad name="P$1" x="-11.95" y="0" drill="2.8"/>
-<circle x="0" y="0" radius="12.2" width="0.3048" layer="21"/>
-<pad name="P$2" x="11.95" y="0" drill="2.8"/>
-<text x="-8.89" y="0" size="1.27" layer="25">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27">&gt;VALUE</text>
+<package name="1415">
+<pad name="P1" x="-5.9999875" y="0" drill="1.4"/>
+<circle x="0" y="0" radius="7.4" width="0.127" layer="21"/>
+<pad name="P2" x="5.9999875" y="0" drill="1.4"/>
+<text x="-3.81" y="3.81" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3.81" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
-<symbol name="MURATA1400">
+<symbol name="INDUCTOR">
 <wire x1="0" y1="5.08" x2="1.27" y2="3.81" width="0.254" layer="94" curve="-90" cap="flat"/>
 <wire x1="0" y1="2.54" x2="1.27" y2="3.81" width="0.254" layer="94" curve="90" cap="flat"/>
 <wire x1="0" y1="2.54" x2="1.27" y2="1.27" width="0.254" layer="94" curve="-90" cap="flat"/>
@@ -5005,15 +5005,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MURATA1400">
+<deviceset name="WE-FAMI">
 <gates>
-<gate name="G$1" symbol="MURATA1400" x="0" y="0"/>
+<gate name="G$1" symbol="INDUCTOR" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="MURATA1400">
+<device name="" package="1415">
 <connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
+<connect gate="G$1" pin="1" pad="P1"/>
+<connect gate="G$1" pin="2" pad="P2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5143,7 +5143,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="S2" library="SparkFun-Electromechanical" deviceset="SWITCH-MOMENTARY-2" device="PTH">
 <attribute name="PN" value="SW406-ND"/>
 </part>
-<part name="C1" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="100uF, 35V">
+<part name="C1" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="100uF">
 <attribute name="PN" value="1572-1306-ND"/>
 </part>
 <part name="C2" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
@@ -5167,10 +5167,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1M">
 <attribute name="PN" value="1.00MXBK-ND"/>
 </part>
-<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf, 250V">
+<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
 <attribute name="PN" value="445-173449-1-ND"/>
 </part>
-<part name="C4" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="4u7, 250V">
+<part name="C4" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="4u7">
 <attribute name="PN" value="399-6091-ND"/>
 </part>
 <part name="GND1" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -5192,9 +5192,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="TM1" library="adafruit" deviceset="TRIM" device="3386"/>
-<part name="L1" library="murata1400" deviceset="MURATA1400" device="">
-<attribute name="PN" value="811-2633-ND"/>
-</part>
+<part name="L1" library="misc" deviceset="WE-FAMI" device="" value="22uH"/>
 </parts>
 <sheets>
 <sheet>
@@ -5364,9 +5362,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND14" gate="1" x="223.52" y="106.68"/>
 <instance part="GND15" gate="1" x="223.52" y="66.04"/>
 <instance part="TM1" gate="G$1" x="101.6" y="58.42" rot="R180"/>
-<instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90">
-<attribute name="PN" x="73.66" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
-</instance>
+<instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -5405,14 +5401,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="190.5" y1="127" x2="187.96" y2="127" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="127" x2="182.88" y2="127" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="127" x2="182.88" y2="124.46" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="182.88" y1="127" x2="177.8" y2="127" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="127" x2="177.8" y2="124.46" width="0.1524" layer="91"/>
+<junction x="182.88" y="127"/>
 <pinref part="U5" gate="G$1" pin="-IN"/>
-<junction x="187.96" y="127"/>
+<wire x1="182.88" y1="127" x2="187.96" y2="127" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J2" gate="J$1" pin="2"/>
@@ -5578,6 +5573,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="U2" gate="G$1" pin="*9"/>
 <wire x1="134.62" y1="106.68" x2="127" y2="106.68" width="0.1524" layer="91"/>
+<label x="127" y="106.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -5608,6 +5604,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="U2" gate="G$1" pin="8"/>
 <wire x1="134.62" y1="109.22" x2="127" y2="109.22" width="0.1524" layer="91"/>
+<label x="127" y="109.22" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="I1" class="0">
@@ -5739,6 +5736,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="223.52" y1="121.92" x2="223.52" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="223.52" y1="121.92" x2="233.68" y2="121.92" width="0.1524" layer="91"/>
 <label x="226.06" y="121.92" size="1.778" layer="95"/>
+<junction x="223.52" y="121.92"/>
 </segment>
 </net>
 <net name="VOUT" class="0">
@@ -5921,6 +5919,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="U2" gate="G$1" pin="*10"/>
 <wire x1="157.48" y1="106.68" x2="165.1" y2="106.68" width="0.1524" layer="91"/>
+<label x="157.48" y="106.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DB6" class="0">
@@ -5933,7 +5932,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U2" gate="G$1" pin="*11"/>
 <wire x1="157.48" y1="109.22" x2="165.1" y2="109.22" width="0.1524" layer="91"/>
 <label x="157.48" y="109.22" size="1.778" layer="95"/>
-<label x="157.48" y="106.68" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DB5" class="0">
@@ -5976,6 +5974,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="U2" gate="G$1" pin="4"/>
 <wire x1="134.62" y1="119.38" x2="127" y2="119.38" width="0.1524" layer="91"/>
+<label x="127" y="119.38" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="1"/>
@@ -5987,6 +5986,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="U2" gate="G$1" pin="*5"/>
 <wire x1="134.62" y1="116.84" x2="127" y2="116.84" width="0.1524" layer="91"/>
+<label x="127" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="1"/>
