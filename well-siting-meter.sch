@@ -4982,7 +4982,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <packages>
 <package name="1415">
 <pad name="P1" x="-5.9999875" y="0" drill="1.4"/>
-<circle x="0" y="0" radius="7.4" width="0.127" layer="21"/>
+<circle x="0" y="0" radius="7.4" width="0.3048" layer="21"/>
 <pad name="P2" x="5.9999875" y="0" drill="1.4"/>
 <text x="-3.81" y="3.81" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.81" y="-5.08" size="1.27" layer="27">&gt;VALUE</text>
@@ -5014,6 +5014,51 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <connects>
 <connect gate="G$1" pin="1" pad="P1"/>
 <connect gate="G$1" pin="2" pad="P2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="murata1400">
+<packages>
+<package name="MURATA1400">
+<pad name="P$1" x="-11.95" y="0" drill="2.8"/>
+<circle x="0" y="0" radius="12.2" width="0.3048" layer="21"/>
+<pad name="P$2" x="11.95" y="0" drill="2.8"/>
+<text x="-8.89" y="0" size="1.27" layer="25">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="MURATA1400">
+<wire x1="0" y1="5.08" x2="1.27" y2="3.81" width="0.254" layer="94" curve="-90" cap="flat"/>
+<wire x1="0" y1="2.54" x2="1.27" y2="3.81" width="0.254" layer="94" curve="90" cap="flat"/>
+<wire x1="0" y1="2.54" x2="1.27" y2="1.27" width="0.254" layer="94" curve="-90" cap="flat"/>
+<wire x1="0" y1="0" x2="1.27" y2="1.27" width="0.254" layer="94" curve="90" cap="flat"/>
+<wire x1="0" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94" curve="-90" cap="flat"/>
+<wire x1="0" y1="-2.54" x2="1.27" y2="-1.27" width="0.254" layer="94" curve="90" cap="flat"/>
+<wire x1="0" y1="-2.54" x2="1.27" y2="-3.81" width="0.254" layer="94" curve="-90" cap="flat"/>
+<wire x1="0" y1="-5.08" x2="1.27" y2="-3.81" width="0.254" layer="94" curve="90" cap="flat"/>
+<text x="2.54" y="5.08" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="0" y="7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
+<pin name="2" x="0" y="-7.62" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MURATA1400">
+<gates>
+<gate name="G$1" symbol="MURATA1400" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MURATA1400">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
+<connect gate="G$1" pin="2" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -5192,7 +5237,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="TM1" library="adafruit" deviceset="TRIM" device="3386"/>
-<part name="L1" library="misc" deviceset="WE-FAMI" device="" value="22uH"/>
+<part name="L1" library="misc" deviceset="WE-FAMI" device="" value="22uH">
+<attribute name="PN" value="732-7163-ND"/>
+</part>
+<part name="L2" library="murata1400" deviceset="MURATA1400" device="" value="47uH">
+<attribute name="PN" value="811-2633-ND"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -5361,8 +5411,16 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </instance>
 <instance part="GND14" gate="1" x="223.52" y="106.68"/>
 <instance part="GND15" gate="1" x="223.52" y="66.04"/>
-<instance part="TM1" gate="G$1" x="101.6" y="58.42" rot="R180"/>
-<instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90"/>
+<instance part="TM1" gate="G$1" x="101.6" y="58.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="104.14" y="60.96" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="104.14" y="60.96" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90">
+<attribute name="PN" x="73.66" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="L2" gate="G$1" x="73.66" y="93.98" rot="R90">
+<attribute name="PN" x="73.66" y="93.98" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5651,6 +5709,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="182.88" y1="111.76" x2="175.26" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="114.3" x2="182.88" y2="111.76" width="0.1524" layer="91"/>
 <label x="175.26" y="111.76" size="1.778" layer="95"/>
+<junction x="182.88" y="111.76"/>
 </segment>
 </net>
 <net name="V+" class="0">
@@ -5752,6 +5811,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <label x="226.06" y="81.28" size="1.778" layer="95"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="223.52" y1="81.28" x2="220.98" y2="81.28" width="0.1524" layer="91"/>
+<junction x="223.52" y="81.28"/>
 </segment>
 </net>
 <net name="VIN" class="0">
@@ -5884,6 +5944,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="SUPPLY8" gate="G$1" pin="V_BATT"/>
 <wire x1="25.4" y1="83.82" x2="25.4" y2="86.36" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="83.82" x2="63.5" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="L2" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="93.98" x2="66.04" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RS" class="0">
@@ -6022,6 +6085,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="D3" gate="G$1" pin="A"/>
 <wire x1="88.9" y1="83.82" x2="91.44" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="L1" gate="G$1" pin="2"/>
+<junction x="88.9" y="83.82"/>
+<pinref part="L2" gate="G$1" pin="2"/>
+<wire x1="81.28" y1="93.98" x2="88.9" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="93.98" x2="88.9" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
