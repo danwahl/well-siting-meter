@@ -8,8 +8,8 @@
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="10" altunitdist="mil" altunit="mil"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -970,6 +970,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="TM1" library="adafruit" package="TRIM-3386" value="" x="43.18" y="16.51" smashed="yes" rot="R270">
 <attribute name="NAME" x="41.275" y="21.59" size="0.8128" layer="25" font="vector"/>
 <attribute name="VALUE" x="41.275" y="10.16" size="1.27" layer="27"/>
+<attribute name="PN" value="1528-1997-ND " x="43.18" y="16.51" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
 <element name="L1" library="misc" package="1415" value="22uH" x="81.28" y="16.51" smashed="yes" rot="R270">
 <attribute name="NAME" x="85.09" y="20.32" size="0.8128" layer="25" font="vector" rot="R270"/>

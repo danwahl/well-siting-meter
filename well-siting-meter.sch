@@ -5236,7 +5236,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="TM1" library="adafruit" deviceset="TRIM" device="3386"/>
+<part name="TM1" library="adafruit" deviceset="TRIM" device="3386">
+<attribute name="PN" value="1528-1997-ND "/>
+</part>
 <part name="L1" library="misc" deviceset="WE-FAMI" device="" value="22uH">
 <attribute name="PN" value="732-7163-ND"/>
 </part>
@@ -5414,6 +5416,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="TM1" gate="G$1" x="101.6" y="58.42" smashed="yes" rot="R180">
 <attribute name="NAME" x="104.14" y="60.96" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="104.14" y="60.96" size="1.778" layer="96" rot="R270"/>
+<attribute name="PN" x="101.6" y="58.42" size="1.778" layer="96" rot="R180" display="off"/>
 </instance>
 <instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90">
 <attribute name="PN" x="73.66" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
