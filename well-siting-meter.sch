@@ -8,20 +8,20 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="14" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="14" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="14" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="14" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="14" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -30,8 +30,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -39,19 +39,19 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
-<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
-<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="14" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="14" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="yes" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="yes" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -5146,10 +5146,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </part>
 <part name="SUPPLY13" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C7" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="10uF">
+<part name="C7" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="10uF">
 <attribute name="PN" value="445-173437-1-ND"/>
 </part>
-<part name="C8" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="10uF">
+<part name="C8" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="10uF">
 <attribute name="PN" value="445-173437-1-ND"/>
 </part>
 <part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="V_BATT" device=""/>
@@ -5191,10 +5191,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C1" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="100uF">
 <attribute name="PN" value="1572-1306-ND"/>
 </part>
-<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<part name="C2" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="BC2665CT-ND"/>
 </part>
-<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<part name="C3" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="BC2665CT-ND"/>
 </part>
 <part name="T1" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="FQP30N06L">
@@ -5212,7 +5212,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R9" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="1M">
 <attribute name="PN" value="1.00MXBK-ND"/>
 </part>
-<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<part name="C6" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="445-173449-1-ND"/>
 </part>
 <part name="C4" library="SparkFun-Passives" deviceset="CAP_POL" device="PTH1" value="4u7">
@@ -5228,10 +5228,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R11" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="31.6K">
 <attribute name="PN" value="31.6KXBK-ND"/>
 </part>
-<part name="C10" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<part name="C10" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="BC2665CT-ND"/>
 </part>
-<part name="C9" library="SparkFun-Passives" deviceset="CAP" device="PTH" value="0.1uf">
+<part name="C9" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="BC2665CT-ND"/>
 </part>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
