@@ -5294,7 +5294,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="GND2" gate="1" x="170.18" y="91.44"/>
 <instance part="GND3" gate="1" x="101.6" y="147.32"/>
 <instance part="GND4" gate="1" x="170.18" y="147.32"/>
-<instance part="GND5" gate="1" x="124.46" y="109.22"/>
+<instance part="GND5" gate="1" x="124.46" y="91.44"/>
 <instance part="SUPPLY6" gate="G$1" x="195.58" y="137.16"/>
 <instance part="SUPPLY7" gate="G$1" x="195.58" y="96.52"/>
 <instance part="GND6" gate="1" x="195.58" y="104.14"/>
@@ -5443,7 +5443,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <pinref part="U2" gate="G$1" pin="GND"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="134.62" y1="127" x2="124.46" y2="127" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="127" x2="124.46" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="127" x2="124.46" y2="93.98" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="-VS"/>
