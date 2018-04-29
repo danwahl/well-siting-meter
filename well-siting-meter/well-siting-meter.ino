@@ -33,7 +33,7 @@ void setup() {
 
   // setup lcd
   lcd.begin(16, 2);
-  lcd.print("hello, world!");
+  //lcd.print("hello, world!");
 
   // setup lcd vo
   pinMode(VO_PIN, OUTPUT);
@@ -71,10 +71,12 @@ void loop() {
 
   // read voltages
   Serial.print("iout = ");
-  Serial.println(convert(analogRead(IOUT_PIN), I_GAIN));
+  float iout = convert(analogRead(IOUT_PIN), I_GAIN);
+  Serial.println(iout);
   //Serial.println(analogRead(IOUT_PIN));
   Serial.print("vout = ");
-  Serial.println(convert(analogRead(VOUT_PIN), V_GAIN));
+  float vout = convert(analogRead(VOUT_PIN), V_GAIN);
+  Serial.println(vout);
   //Serial.println(analogRead(VOUT_PIN));
   //Serial.print("shdn = ");
   //Serial.println(analogRead(SHDN_PIN));
@@ -88,11 +90,17 @@ void loop() {
   Serial.println("");
 
   // print to lcd
+  lcd.setCursor(0, 0);
+  lcd.print("vout:");
+  lcd.setCursor(8, 0);
+  lcd.print(analogRead(IOUT_PIN));
   lcd.setCursor(0, 1);
-  lcd.print(millis()/1000);
+  lcd.print("iout:");
+  lcd.setCursor(8, 1);
+  lcd.print(iout);
   
   // delay for a bit
-  delay(1000);
+  delay(200);
 }
 
 /*************************************************************************************************************
