@@ -1,0 +1,15 @@
+rev A
+x cap footprint
+x polarized cap footprint
+x ad623 footprint
+x 5v supply interferes with lower button
+x binding post holes way too big (fixed using other banana jacks)
+x wrong value base resistor
+x base/collector reversed
+x relay coil reversed??
+x potential common mode issue with voltage measurement
+x thermals on all pours
+trimpot outline
+
+boost calcs (sense resistor)
+inductor
