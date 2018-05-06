@@ -17,7 +17,7 @@
 "1";"2.05K";"RESISTORPTH-1/4W";"AXIAL-0.4";"R5";"Resistor";"2.05KXBK-ND";"";"";
 "1";"22uH";"WE-FAMI";"1415";"L1";"";"732-7163-ND";"";"";
 "2";"31.6K";"RESISTORPTH-1/4W";"AXIAL-0.4";"R10, R11";"Resistor";"31.6KXBK-ND";"";"";
-"2";"392";"RESISTORPTH-1/4W";"AXIAL-0.4";"R3, R4";"Resistor";"392XBK-ND";"";"";
+"2";"392R";"RESISTORPTH-1/4W";"AXIAL-0.4";"R3, R4";"Resistor";"392XBK-ND";"";"";
 "1";"47uH";"MURATA1400";"MURATA1400";"L2";"";"811-2633-ND";"";"";
 "1";"4u7";"CAP_POLPTH4";"CPOL-RADIAL-1000UF-25V";"C4";"Capacitor Polarized";"399-6091-ND";"";"";
 "1";"7805";"M03PTH";"1X03";"J2";"Header 3";"811-2196-5-ND";"LM7805CT-ND";"";

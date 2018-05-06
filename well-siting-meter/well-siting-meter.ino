@@ -38,16 +38,16 @@ void setup() {
   // setup lcd vo
   pinMode(VO_PIN, OUTPUT);
   analogWrite(VO_PIN, 64);
-  
+
   // setup buttons
   pinMode(B1_PIN, INPUT_PULLUP);
   pinMode(B2_PIN, INPUT_PULLUP);
 
   // setup switches
   pinMode(ISW_PIN, OUTPUT);
-  digitalWrite(ISW_PIN, LOW); 
+  digitalWrite(ISW_PIN, LOW);
   pinMode(VSW_PIN, OUTPUT);
-  digitalWrite(VSW_PIN, LOW); 
+  digitalWrite(VSW_PIN, LOW);
 
   // setup boost shutdown
   pinMode(SHDN_PIN, OUTPUT);
@@ -82,8 +82,8 @@ void loop() {
   //Serial.println(analogRead(SHDN_PIN));
 
   // switch pins
-  //digitalWrite(ISW_PIN, !digitalRead(ISW_PIN));
-  //digitalWrite(VSW_PIN, !digitalRead(VSW_PIN));
+  digitalWrite(ISW_PIN, !digitalRead(ISW_PIN));
+  digitalWrite(VSW_PIN, !digitalRead(VSW_PIN));
   //digitalWrite(SHDN_PIN, !digitalRead(SHDN_PIN));
 
   // print a line
@@ -98,15 +98,15 @@ void loop() {
   lcd.print("iout:");
   lcd.setCursor(8, 1);
   lcd.print(iout);
-  
+
   // delay for a bit
-  delay(200);
+  delay(1000);
 }
 
 /*************************************************************************************************************
   convert
 *************************************************************************************************************/
 float convert(int adc, float gain) {
-  return ((float)adc - ADC_MAX/2.0)*5.0/ADC_MAX/gain;
+  return ((float)adc - ADC_MAX / 2.0) * 5.0 / ADC_MAX / gain;
 }
 
