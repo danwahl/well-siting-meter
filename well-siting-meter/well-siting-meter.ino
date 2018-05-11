@@ -1,5 +1,7 @@
 #include <LiquidCrystal.h>
 
+#define DEBUG
+
 // pin definitions
 #define RS_PIN          2
 #define VO_PIN          3
@@ -18,44 +20,73 @@
 
 // other variables
 #define ADC_MAX         1023.0f
-#define I_GAIN          49.78f
 #define V_GAIN          2.0f
+#define I_GAIN          49.78f
+#define R_SENSE         0.05f
+#define NUM_MEAS        10
 
 // timers
 #define WAIT_TIMEOUT    10
 #define INIT_TIMEOUT    3000
-#define MEAS_TIMEOUT    1000
+#define MEAS_TIMEOUT    50
 #define STOP_TIMEOUT    2000
+#define BOOST_TIMEOUT   500
+#define DIR_TIMEOUT     100
 
-// screen setup
+// button state
 enum {
-  SCREEN_INIT,
-  SCREEN_START,
-  SCREEN_WARNING,
-  SCREEN_GROUND,
-  SCREEN_FORWARD,
-  SCREEN_REVERSE,
-  SCREEN_STOP,
-  SCREEN_DISPLAY,
-  NUM_SCREENS
+  DOWN  = LOW,
+  UP    = HIGH
 };
-int screen;
+
+// boost state
+enum {
+  OFF   = LOW,
+  ON    = HIGH
+};
+
+// dir state
+enum {
+  FWD   = LOW,
+  REV   = HIGH
+};
+
+// system state
+enum {
+  INIT,
+  START,
+  WARNING,
+  GROUND,
+  FORWARD,
+  REVERSE,
+  STOP,
+  RESULTS,
+  NUM_STATES
+};
+int state;
 
 // initialize lcd
 LiquidCrystal lcd(RS_PIN, EN_PIN, DB4_PIN, DB5_PIN, DB6_PIN, DB7_PIN);
+
+#ifdef DEBUG
+#define BUFFER_SIZE     64
+char buf[BUFFER_SIZE];
+#endif
 
 /*************************************************************************************************************
   setup
 *************************************************************************************************************/
 void setup() {
+#ifdef DEBUG
   // open serial port
   Serial.begin(9600);
+  while(!Serial){};
+  
+  Serial.println("setup()");
+#endif
 
   // setup lcd
   lcd.begin(16, 2);
-
-  // screen
-  screen = SCREEN_INIT;
 
   // setup lcd vo
   pinMode(VO_PIN, OUTPUT);
@@ -84,32 +115,43 @@ void setup() {
   loop
 *************************************************************************************************************/
 void loop() {
+#ifdef DEBUG
+  Serial.println("loop()");
+#endif
+  // results
+  float vgnd, ignd, vfwd, vrev, ifwd, irev;
+
+#ifdef DEBUG
+  snprintf(buf, BUFFER_SIZE, "state = %d", state);  
+  Serial.println(buf);
+#endif
+  
   // display switch
-  switch(screen) {
-    case(SCREEN_INIT):
-      // update screen
+  switch(state) {
+    case(INIT):
+      // update state
       lcd.clear();
       lcd.print("well siting");
       lcd.setCursor(0, 1);
       lcd.print("meter (v2)");
 
       // wait, then transition to start
-      wait(0, INIT_TIMEOUT);
-      screen = SCREEN_START;
+      wait(B2_PIN, INIT_TIMEOUT);
+      state = START;
       break;
-    case(SCREEN_START):
-      // update screen
+    case(START):
+      // update state
       lcd.clear();
       lcd.print("press button 1");
       lcd.setCursor(0, 1);
       lcd.print("to start...");
 
       // wait for button press
-      if(wait(B1_PIN, -1)) {
-        screen = SCREEN_WARNING;
+      if(wait(B1_PIN, -1) <= 0) {
+        state = WARNING;
       }
-    case(SCREEN_WARNING):
-      // update screen
+    case(WARNING):
+      // update state
       lcd.clear();
       lcd.print("starting in:");
       lcd.setCursor(0, 1);
@@ -120,61 +162,62 @@ void loop() {
         lcd.print("... ");
 
         // check for button interrupt
-        if(wait(B2_PIN, 1000)) {
+        if(wait(B2_PIN, 1000) <= 0) {
           reset();
-          screen = SCREEN_START;
         }
       }
 
       // transition
-      screen = SCREEN_GROUND;
+      state = GROUND;
       break;
-    case(SCREEN_GROUND):
+    case(GROUND):
       lcd.clear();
       lcd.print("ground meas");
       lcd.setCursor(0, 1);
       lcd.print("|###");
 
-      // check for button interrupt
-      if(wait(B2_PIN, MEAS_TIMEOUT)) {
+      // measure gnd
+      float vgfwd, vgrev;
+      if(meas(OFF, FWD, vgfwd, ignd) <= 0) {
         reset();
-        screen = SCREEN_INIT;
       }
-      else {
-        screen = SCREEN_FORWARD;
+      if(meas(OFF, REV, vgrev, ignd) <= 0) {
+        reset();
       }
+      vgnd = (vgfwd + vgrev)/2.0f;
+      
+      // transition
+      state = FORWARD;
       break;
-    case(SCREEN_FORWARD):
+    case(FORWARD):
       lcd.clear();
       lcd.print("forward meas");
       lcd.setCursor(0, 1);
       lcd.print("|#######");
 
-      // check for button interrupt
-      if(wait(B2_PIN, MEAS_TIMEOUT)) {
+      // measure fwd
+      if(meas(ON, FWD, vfwd, ifwd) <= 0) {
         reset();
-        screen = SCREEN_INIT;
       }
       else {
-        screen = SCREEN_REVERSE;
+        state = REVERSE;
       }
       break;
-    case(SCREEN_REVERSE):
+    case(REVERSE):
       lcd.clear();
       lcd.print("reverse meas");
       lcd.setCursor(0, 1);
       lcd.print("|###########");
 
-      // check for button interrupt
-      if(wait(B2_PIN, MEAS_TIMEOUT)) {
+      // measure rev
+      if(meas(ON, REV, vfwd, ifwd) <= 0) {
         reset();
-        screen = SCREEN_INIT;
       }
       else {
-        screen = SCREEN_STOP;
+        state = STOP;
       }
       break;
-    case(SCREEN_STOP):
+    case(STOP):
       lcd.clear();
       lcd.print("shutting down");
       lcd.setCursor(0, 1);
@@ -182,79 +225,163 @@ void loop() {
 
       // wait and transition
       wait(0, STOP_TIMEOUT);
-      screen = SCREEN_DISPLAY;
+      state = RESULTS;
       break;
-    case(SCREEN_DISPLAY):
+    case(RESULTS):
       lcd.clear();
       lcd.print("finished!");
       lcd.setCursor(0, 1);
       lcd.print("press button 2");
 
       // wait for button press
-      if(wait(B2_PIN, -1)) {
-        screen = SCREEN_START;
+      if(wait(B2_PIN, -1) <= 0) {
+        state = START;
       }
       break;
     default:
-      screen = SCREEN_INIT;
+      reset();
       break;
   }
+}
+
+/*************************************************************************************************************
+  meas
+*************************************************************************************************************/
+int meas(int boost, int dir, float &vout, float &iout) {
+#ifdef DEBUG
+  snprintf(buf, BUFFER_SIZE, "meas(%d, %d, %3.3f, %3.3f", boost, dir, vout, iout);  
+  Serial.println(buf);
+#endif
+  static int n = NUM_MEAS*2;
   
-  /*
-  // read button states
-  Serial.print("b1 = ");
-  Serial.println(digitalRead(B1_PIN));
-  Serial.print("b2 = ");
-  Serial.println(digitalRead(B2_PIN));
+  // check dir
+  if(digitalRead(ISW_PIN) != dir) {
+    digitalWrite(ISW_PIN, dir);
 
-  // read voltages
-  Serial.print("iout = ");
-  float iout = convert(analogRead(IOUT_PIN), I_GAIN);
-  Serial.println(iout);
-  //Serial.println(analogRead(IOUT_PIN));
-  Serial.print("vout = ");
-  float vout = convert(analogRead(VOUT_PIN), V_GAIN);
-  Serial.println(vout);
-  //Serial.println(analogRead(VOUT_PIN));
-  //Serial.print("shdn = ");
-  //Serial.println(analogRead(SHDN_PIN));
+    // wait for switch
+    if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+      return 0;
+    }
+  }
+  
+  if(boost == ON) {
+    // enable boost
+    digitalWrite(SHDN_PIN, LOW);
 
-  // switch pins
-  //digitalWrite(ISW_PIN, !digitalRead(ISW_PIN));
-  //digitalWrite(VSW_PIN, !digitalRead(VSW_PIN));
-  //digitalWrite(SHDN_PIN, !digitalRead(SHDN_PIN));
+#ifdef DEBUG
+  Serial.println("boost = ON");
+#endif
 
-  // print a line
-  Serial.println("");
+    // wait for voltage to stabilize
+    if(wait(B2_PIN, BOOST_TIMEOUT) <= 0) {
+      return 0;
+    }
+  }
 
-  // print to lcd
-  lcd.setCursor(0, 0);
-  lcd.print("vout:");
-  lcd.setCursor(8, 0);
-  lcd.print(analogRead(IOUT_PIN));
-  lcd.setCursor(0, 1);
-  lcd.print("iout:");
-  lcd.setCursor(8, 1);
-  lcd.print(iout);
+  // measurement vars
+  float vfmeas[NUM_MEAS], vrmeas[NUM_MEAS];
+  float imeas[n];
 
-  // delay for a bit
-  delay(1000);
-  */
+  // setup fwd
+  if(digitalRead(VSW_PIN) != FWD) {
+    digitalWrite(VSW_PIN, FWD);
+
+    // wait for switch
+    if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+      return 0;
+    }
+  }
+
+  // fwd meas
+  for(int i = 0; i < NUM_MEAS; i++) {
+    // wait for next measurement
+    if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
+      return 0;
+    }
+    
+    // read and convert
+    vfmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
+    imeas[i] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+  }
+
+  // setup rev
+  digitalWrite(VSW_PIN, REV);
+
+  // wait for switch
+  if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+    return 0;
+  }
+
+  // rev meas
+  for(int i = 0; i < NUM_MEAS; i++) {
+    // wait for next measurement
+    if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
+      return 0;
+    }
+    
+    // read and convert
+    vrmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
+    imeas[i + NUM_MEAS] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+  }
+
+  if(boost == ON) {
+    // disable boost
+    digitalWrite(SHDN_PIN, HIGH);
+  }
+
+  // average
+  float vfsum = 0.0f;
+  float vrsum = 0.0f;
+  float isum = 0.0f;
+  for(int i = 0; i < n; i++) {
+    // sum vmeas
+    if(i < NUM_MEAS) {
+      vfsum += vfmeas[i];
+    }
+    else {
+      vrsum += vrmeas[i - NUM_MEAS];
+    }
+
+    // sum imeas
+    isum += imeas[i];
+  }
+  float vfwd = vfsum/NUM_MEAS;
+  float vrev = vrsum/NUM_MEAS;
+  iout = isum/n;
+
+  // check for voltage dir
+  if(vfwd >= vrev) {
+    vout = vfwd;
+  }
+  else {
+    vout = -vrev;
+  }
+
+  return 1;
 }
 
 /*************************************************************************************************************
   reset
 *************************************************************************************************************/
 void reset(void) {
-  digitalWrite(ISW_PIN, LOW);
-  digitalWrite(VSW_PIN, LOW);
+#ifdef DEBUG
+  Serial.println("reset()");
+#endif
+
   digitalWrite(SHDN_PIN, HIGH);
+  digitalWrite(ISW_PIN, FWD);
+  digitalWrite(VSW_PIN, FWD);
+  state = INIT;
 }
 
 /*************************************************************************************************************
   wait
 *************************************************************************************************************/
 int wait(int button, int timeout) {
+#ifdef DEBUG
+  snprintf(buf, BUFFER_SIZE, "wait(%d, %d)", button, timeout);  
+  Serial.println(buf);
+#endif
   // if we're waiting for a button press, check periodically
   if(button) {
     // set timer
@@ -263,20 +390,20 @@ int wait(int button, int timeout) {
     // wait loop
     while((millis() - timer) < timeout) {
       // check for button down
-      if(!digitalRead(button)) {
-        return 1;
+      if(digitalRead(button) == DOWN) {
+        return 0;
       }
 
       // delay 
       delay(WAIT_TIMEOUT);
     }
 
-    return 0;
+    return 1;
   }
   // otherwise just delay and return
   else {
     delay(timeout);
-    return 0;
+    return 1;
   }
 }
 
@@ -284,6 +411,11 @@ int wait(int button, int timeout) {
   convert
 *************************************************************************************************************/
 float convert(int adc, float gain) {
-  return ((float)adc - ADC_MAX / 2.0) * 5.0 / ADC_MAX / gain;
+#ifdef DEBUG
+  snprintf(buf, BUFFER_SIZE, "convert(%3.3f, %3.3f)", adc, gain);  
+  Serial.println(buf);
+#endif
+  
+  return ((float)adc - ADC_MAX/2.0)*5.0/ADC_MAX/gain;
 }
 
