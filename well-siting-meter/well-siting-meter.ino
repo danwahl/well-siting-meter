@@ -68,11 +68,6 @@ int state;
 // initialize lcd
 LiquidCrystal lcd(RS_PIN, EN_PIN, DB4_PIN, DB5_PIN, DB6_PIN, DB7_PIN);
 
-#ifdef DEBUG
-#define BUFFER_SIZE     64
-char buf[BUFFER_SIZE];
-#endif
-
 /*************************************************************************************************************
   setup
 *************************************************************************************************************/
@@ -122,8 +117,7 @@ void loop() {
   float vgnd, ignd, vfwd, vrev, ifwd, irev;
 
 #ifdef DEBUG
-  snprintf(buf, BUFFER_SIZE, "state = %d", state);  
-  Serial.println(buf);
+  Serial.println(String("state = ") + state);
 #endif
   
   // display switch
@@ -249,14 +243,17 @@ void loop() {
 *************************************************************************************************************/
 int meas(int boost, int dir, float &vout, float &iout) {
 #ifdef DEBUG
-  snprintf(buf, BUFFER_SIZE, "meas(%d, %d, %3.3f, %3.3f", boost, dir, vout, iout);  
-  Serial.println(buf);
+  Serial.println(String("meas(") + boost + ", " + dir + ", " + vout + ", " + iout + ")");
 #endif
   static int n = NUM_MEAS*2;
   
   // check dir
   if(digitalRead(ISW_PIN) != dir) {
     digitalWrite(ISW_PIN, dir);
+
+#ifdef DEBUG
+    Serial.println(String("isw = ") + dir);
+#endif
 
     // wait for switch
     if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
@@ -269,7 +266,7 @@ int meas(int boost, int dir, float &vout, float &iout) {
     digitalWrite(SHDN_PIN, LOW);
 
 #ifdef DEBUG
-  Serial.println("boost = ON");
+    Serial.println("boost = ON");
 #endif
 
     // wait for voltage to stabilize
@@ -285,6 +282,10 @@ int meas(int boost, int dir, float &vout, float &iout) {
   // setup fwd
   if(digitalRead(VSW_PIN) != FWD) {
     digitalWrite(VSW_PIN, FWD);
+
+#ifdef DEBUG
+    Serial.println("vsw = FWD");
+#endif
 
     // wait for switch
     if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
@@ -302,10 +303,18 @@ int meas(int boost, int dir, float &vout, float &iout) {
     // read and convert
     vfmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
     imeas[i] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+
+#ifdef DEBUG
+    Serial.println(String("") + i + ": vfmeas = " + vfmeas[i] + ", imeas = " + imeas[i]);
+#endif
   }
 
   // setup rev
   digitalWrite(VSW_PIN, REV);
+
+#ifdef DEBUG
+    Serial.println("vsw = REV");
+#endif
 
   // wait for switch
   if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
@@ -322,11 +331,19 @@ int meas(int boost, int dir, float &vout, float &iout) {
     // read and convert
     vrmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
     imeas[i + NUM_MEAS] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+
+#ifdef DEBUG
+    Serial.println(String("") + i + ": vrmeas = " + vrmeas[i] + ", imeas = " + imeas[i + NUM_MEAS]);
+#endif
   }
 
   if(boost == ON) {
     // disable boost
     digitalWrite(SHDN_PIN, HIGH);
+
+#ifdef DEBUG
+    Serial.println("boost = OFF");
+#endif
   }
 
   // average
@@ -357,6 +374,11 @@ int meas(int boost, int dir, float &vout, float &iout) {
     vout = -vrev;
   }
 
+#ifdef DEBUG
+    Serial.println(String("vfwd = ") + vfwd + ", vrev = " + vrev);
+    Serial.println(String("vout = ") + vout + ", iout = " + iout);
+#endif
+
   return 1;
 }
 
@@ -379,8 +401,7 @@ void reset(void) {
 *************************************************************************************************************/
 int wait(int button, int timeout) {
 #ifdef DEBUG
-  snprintf(buf, BUFFER_SIZE, "wait(%d, %d)", button, timeout);  
-  Serial.println(buf);
+  Serial.println(String("wait(") + button + ", " + timeout + ")");
 #endif
   // if we're waiting for a button press, check periodically
   if(button) {
@@ -412,10 +433,9 @@ int wait(int button, int timeout) {
 *************************************************************************************************************/
 float convert(int adc, float gain) {
 #ifdef DEBUG
-  snprintf(buf, BUFFER_SIZE, "convert(%3.3f, %3.3f)", adc, gain);  
-  Serial.println(buf);
+  Serial.println(String("convert(") + adc + ", " + gain + ")");
 #endif
   
-  return ((float)adc - ADC_MAX/2.0)*5.0/ADC_MAX/gain;
+  return ((float)adc - ADC_MAX/2.0f)*5.0f/ADC_MAX/gain;
 }
 
