@@ -28,7 +28,7 @@
 // timers
 #define WAIT_TIMEOUT    10
 #define INIT_TIMEOUT    3000
-#define MEAS_TIMEOUT    50
+#define MEAS_TIMEOUT    25
 #define STOP_TIMEOUT    2000
 #define BOOST_TIMEOUT   500
 #define DIR_TIMEOUT     100
@@ -68,6 +68,9 @@ int state;
 // initialize lcd
 LiquidCrystal lcd(RS_PIN, EN_PIN, DB4_PIN, DB5_PIN, DB6_PIN, DB7_PIN);
 
+// results
+float vgnd, vfwd, vrev, ifwd, irev, vout, iout;
+
 /*************************************************************************************************************
   setup
 *************************************************************************************************************/
@@ -103,7 +106,7 @@ void setup() {
   pinMode(VOUT_PIN, INPUT);
 
   // reset pin states
-  reset();
+  reset(INIT);
 }
 
 /*************************************************************************************************************
@@ -113,8 +116,6 @@ void loop() {
 #ifdef DEBUG
   Serial.println("loop()");
 #endif
-  // results
-  float vgnd, ignd, vfwd, vrev, ifwd, irev;
 
 #ifdef DEBUG
   Serial.println(String("state = ") + state);
@@ -129,7 +130,7 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print("meter (v2)");
 
-      // wait, then transition to start
+      // wait, then transition
       wait(B2_PIN, INIT_TIMEOUT);
       state = START;
       break;
@@ -157,7 +158,8 @@ void loop() {
 
         // check for button interrupt
         if(wait(B2_PIN, 1000) <= 0) {
-          reset();
+          reset(START);
+          return;
         }
       }
 
@@ -168,17 +170,23 @@ void loop() {
       lcd.clear();
       lcd.print("ground meas");
       lcd.setCursor(0, 1);
-      lcd.print("|###");
+      lcd.print("|###           |");
 
       // measure gnd
-      float vgfwd, vgrev;
-      if(meas(OFF, FWD, vgfwd, ignd) <= 0) {
-        reset();
+      float vgfwd, vgrev, _;
+      if(meas(OFF, FWD, vgfwd, _) <= 0) {
+        reset(START);
+        return;
       }
-      if(meas(OFF, REV, vgrev, ignd) <= 0) {
-        reset();
+      if(meas(OFF, REV, vgrev, _) <= 0) {
+        reset(START);
+        return;
       }
       vgnd = (vgfwd + vgrev)/2.0f;
+
+#ifdef DEBUG
+    Serial.println(String("vgnd = ") + vgnd);
+#endif
       
       // transition
       state = FORWARD;
@@ -187,29 +195,39 @@ void loop() {
       lcd.clear();
       lcd.print("forward meas");
       lcd.setCursor(0, 1);
-      lcd.print("|#######");
+      lcd.print("|#######       |");
 
       // measure fwd
       if(meas(ON, FWD, vfwd, ifwd) <= 0) {
-        reset();
+        reset(START);
+        return;
       }
-      else {
-        state = REVERSE;
-      }
+
+#ifdef DEBUG
+    Serial.println(String("vfwd = ") + vfwd + ", ifwd = " + ifwd);
+#endif
+
+      // transition
+      state = REVERSE;
       break;
     case(REVERSE):
       lcd.clear();
       lcd.print("reverse meas");
       lcd.setCursor(0, 1);
-      lcd.print("|###########");
+      lcd.print("|###########   |");
 
       // measure rev
-      if(meas(ON, REV, vfwd, ifwd) <= 0) {
-        reset();
+      if(meas(ON, REV, vrev, irev) <= 0) {
+        reset(START);
+        return;
       }
-      else {
-        state = STOP;
-      }
+
+#ifdef DEBUG
+    Serial.println(String("vrev = ") + vrev + ", irev = " + irev);
+#endif
+
+      // transition
+      state = STOP;
       break;
     case(STOP):
       lcd.clear();
@@ -222,26 +240,39 @@ void loop() {
       state = RESULTS;
       break;
     case(RESULTS):
+      // calculate results
+      vout = (vfwd - vrev)/2.0f;
+      iout = (ifwd + irev)/2.0f;
+      
+#ifdef DEBUG
+    Serial.println(String("vout = ") + vout + ", iout = " + iout);
+#endif
+
       lcd.clear();
-      lcd.print("finished!");
+      lcd.print("vout = ");
+      lcd.setCursor(8, 0);
+      lcd.print(vout);
       lcd.setCursor(0, 1);
-      lcd.print("press button 2");
+      lcd.print("iout = ");
+      lcd.setCursor(8, 1);
+      lcd.print(iout);
 
       // wait for button press
       if(wait(B2_PIN, -1) <= 0) {
-        state = START;
+        reset(START);
+        return;
       }
       break;
     default:
-      reset();
-      break;
+      reset(START);
+      return;
   }
 }
 
 /*************************************************************************************************************
   meas
 *************************************************************************************************************/
-int meas(int boost, int dir, float &vout, float &iout) {
+int meas(int boost, int dir, float &vval, float &ival) {
 #ifdef DEBUG
   Serial.println(String("meas(") + boost + ", " + dir + ", " + vout + ", " + iout + ")");
 #endif
@@ -295,14 +326,20 @@ int meas(int boost, int dir, float &vout, float &iout) {
 
   // fwd meas
   for(int i = 0; i < NUM_MEAS; i++) {
-    // wait for next measurement
+    // read and convert
+    analogRead(VOUT_PIN);
     if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
       return 0;
     }
-    
+    vfmeas[i] = convert(VOUT_PIN, V_GAIN);
+
+
     // read and convert
-    vfmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
-    imeas[i] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+    analogRead(IOUT_PIN);
+    if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
+      return 0;
+    }
+    imeas[i] = convert(IOUT_PIN, I_GAIN)/R_SENSE;
 
 #ifdef DEBUG
     Serial.println(String("") + i + ": vfmeas = " + vfmeas[i] + ", imeas = " + imeas[i]);
@@ -323,14 +360,20 @@ int meas(int boost, int dir, float &vout, float &iout) {
 
   // rev meas
   for(int i = 0; i < NUM_MEAS; i++) {
-    // wait for next measurement
+    // read and convert
+    analogRead(VOUT_PIN);
     if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
       return 0;
     }
-    
+    vrmeas[i] = convert(VOUT_PIN, V_GAIN);
+
+
     // read and convert
-    vrmeas[i] = convert(analogRead(VOUT_PIN), V_GAIN);
-    imeas[i + NUM_MEAS] = convert(analogRead(IOUT_PIN), I_GAIN)/R_SENSE;
+    analogRead(IOUT_PIN);
+    if(wait(B2_PIN, MEAS_TIMEOUT) <= 0) {
+      return 0;
+    }
+    imeas[i + NUM_MEAS] = convert(IOUT_PIN, I_GAIN)/R_SENSE;
 
 #ifdef DEBUG
     Serial.println(String("") + i + ": vrmeas = " + vrmeas[i] + ", imeas = " + imeas[i + NUM_MEAS]);
@@ -364,19 +407,19 @@ int meas(int boost, int dir, float &vout, float &iout) {
   }
   float vfwd = vfsum/NUM_MEAS;
   float vrev = vrsum/NUM_MEAS;
-  iout = isum/n;
+  ival = isum/n;
 
   // check for voltage dir
   if(vfwd >= vrev) {
-    vout = vfwd;
+    vval = vfwd;
   }
   else {
-    vout = -vrev;
+    vval = -vrev;
   }
 
 #ifdef DEBUG
     Serial.println(String("vfwd = ") + vfwd + ", vrev = " + vrev);
-    Serial.println(String("vout = ") + vout + ", iout = " + iout);
+    Serial.println(String("vval = ") + vval + ", ival = " + ival);
 #endif
 
   return 1;
@@ -385,15 +428,24 @@ int meas(int boost, int dir, float &vout, float &iout) {
 /*************************************************************************************************************
   reset
 *************************************************************************************************************/
-void reset(void) {
+void reset(int next) {
 #ifdef DEBUG
-  Serial.println("reset()");
+  Serial.println(String("reset(") + next + ")");
 #endif
 
   digitalWrite(SHDN_PIN, HIGH);
   digitalWrite(ISW_PIN, FWD);
   digitalWrite(VSW_PIN, FWD);
-  state = INIT;
+
+  vgnd = 0;
+  vfwd = 0;
+  vrev = 0;
+  ifwd = 0;
+  irev = 0;
+  vout = 0;
+  iout = 0;
+  
+  state = next;
 }
 
 /*************************************************************************************************************
@@ -404,16 +456,19 @@ int wait(int button, int timeout) {
   Serial.println(String("wait(") + button + ", " + timeout + ")");
 #endif
   // if we're waiting for a button press, check periodically
-  if(button) {
+  if(button > 0) {
     // set timer
     unsigned long timer = millis();
 
     // wait loop
+    int prev = DOWN;
     while((millis() - timer) < timeout) {
       // check for button down
-      if(digitalRead(button) == DOWN) {
+      int val = digitalRead(button);
+      if((val == DOWN) && (prev == UP)) {
         return 0;
       }
+      prev = val;
 
       // delay 
       delay(WAIT_TIMEOUT);
@@ -431,11 +486,19 @@ int wait(int button, int timeout) {
 /*************************************************************************************************************
   convert
 *************************************************************************************************************/
-float convert(int adc, float gain) {
+float convert(int pin, float gain) {
+  int adc;
 #ifdef DEBUG
-  Serial.println(String("convert(") + adc + ", " + gain + ")");
+  Serial.println(String("convert(") + pin + ", " + gain + ")");
 #endif
-  
+
+  // read once to set multiplexor
+  adc = analogRead(pin);
+#ifdef DEBUG
+    Serial.println(String("adc = ") + adc);
+#endif
+
+  // convert
   return ((float)adc - ADC_MAX/2.0f)*5.0f/ADC_MAX/gain;
 }
 
