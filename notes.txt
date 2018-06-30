@@ -13,3 +13,8 @@ trimpot outline
 
 boost calcs (sense resistor)
 inductor
+
+rev B
+bigger boost
+voltage protection
+voltage circuit

@@ -5320,7 +5320,9 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <part name="L1" library="misc" deviceset="WE-FAMI" device="" value="22uH">
 <attribute name="PN" value="732-7163-ND"/>
 </part>
-<part name="F1" library="keystone" deviceset="3568" device=""/>
+<part name="F1" library="keystone" deviceset="3568" device="">
+<attribute name="PN" value="36-3568-ND"/>
+</part>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="V_BATT" device=""/>
 <part name="D4" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="PTH">
 <attribute name="PN" value="1N4001-TPMSCT-ND"/>
@@ -5336,11 +5338,23 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <attribute name="PN" value="PB876-ND"/>
 </part>
 <part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="2.05KXBK-ND"/>
+<attribute name="PN" value="10.0KXBK-ND"/>
 </part>
 <part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="2.05KXBK-ND"/>
+<attribute name="PN" value="10.0KXBK-ND"/>
 </part>
+<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
+<attribute name="PN" value="44.2KXBK-ND"/>
+</part>
+<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
+<attribute name="PN" value="44.2KXBK-ND"/>
+</part>
+<part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="C5" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
+<part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
+<part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5427,8 +5441,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </instance>
 <instance part="GND11" gate="1" x="134.62" y="43.18"/>
 <instance part="SUPPLY11" gate="G$1" x="132.08" y="88.9"/>
-<instance part="J12" gate="G$1" x="167.64" y="50.8" rot="MR0">
-<attribute name="PN" x="167.64" y="50.8" size="1.778" layer="96" rot="MR0" display="off"/>
+<instance part="J12" gate="G$1" x="160.02" y="53.34" rot="MR0">
+<attribute name="PN" x="160.02" y="53.34" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="J7" gate="G$1" x="30.48" y="119.38" rot="MR0">
 <attribute name="PN" x="30.48" y="119.38" size="1.778" layer="96" rot="MR0" display="off"/>
@@ -5436,14 +5450,14 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <instance part="J8" gate="G$1" x="30.48" y="114.3" rot="MR0">
 <attribute name="PN" x="30.48" y="114.3" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
-<instance part="J9" gate="G$1" x="167.64" y="66.04" rot="MR0">
-<attribute name="PN" x="167.64" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
+<instance part="J9" gate="G$1" x="160.02" y="68.58" rot="MR0">
+<attribute name="PN" x="160.02" y="68.58" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
-<instance part="J10" gate="G$1" x="167.64" y="60.96" rot="MR0">
-<attribute name="PN" x="167.64" y="60.96" size="1.778" layer="96" rot="MR0" display="off"/>
+<instance part="J10" gate="G$1" x="160.02" y="63.5" rot="MR0">
+<attribute name="PN" x="160.02" y="63.5" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
-<instance part="J11" gate="G$1" x="167.64" y="55.88" rot="MR0">
-<attribute name="PN" x="167.64" y="55.88" size="1.778" layer="96" rot="MR0" display="off"/>
+<instance part="J11" gate="G$1" x="160.02" y="58.42" rot="MR0">
+<attribute name="PN" x="160.02" y="58.42" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="GND13" gate="1" x="93.98" y="139.7"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -5513,7 +5527,9 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <instance part="L1" gate="G$1" x="73.66" y="83.82" rot="R90">
 <attribute name="PN" x="73.66" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="F1" gate="G$1" x="48.26" y="119.38"/>
+<instance part="F1" gate="G$1" x="48.26" y="119.38">
+<attribute name="PN" x="48.26" y="119.38" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY1" gate="G$1" x="93.98" y="121.92"/>
 <instance part="D4" gate="G$1" x="55.88" y="111.76" rot="MR90">
 <attribute name="PN" x="55.88" y="111.76" size="1.778" layer="96" rot="MR90" display="off"/>
@@ -5528,12 +5544,24 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <instance part="K1" gate="G$1" x="60.96" y="119.38">
 <attribute name="PN" x="60.96" y="119.38" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R12" gate="G$1" x="180.34" y="86.36">
-<attribute name="PN" x="180.34" y="86.36" size="1.778" layer="96" display="off"/>
+<instance part="R12" gate="G$1" x="177.8" y="86.36">
+<attribute name="PN" x="177.8" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R13" gate="G$1" x="180.34" y="76.2">
-<attribute name="PN" x="180.34" y="76.2" size="1.778" layer="96" display="off"/>
+<instance part="R13" gate="G$1" x="172.72" y="76.2">
+<attribute name="PN" x="172.72" y="76.2" size="1.778" layer="96" display="off"/>
 </instance>
+<instance part="R14" gate="G$1" x="185.42" y="68.58" rot="R90">
+<attribute name="PN" x="185.42" y="68.58" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="R15" gate="G$1" x="180.34" y="63.5" rot="R90">
+<attribute name="PN" x="180.34" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
+<instance part="GND17" gate="1" x="180.34" y="50.8"/>
+<instance part="C5" gate="G$1" x="238.76" y="73.66">
+<attribute name="PN" x="238.76" y="73.66" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="SUPPLY12" gate="G$1" x="238.76" y="81.28"/>
+<instance part="GND18" gate="1" x="238.76" y="66.04"/>
 </instances>
 <busses>
 </busses>
@@ -5680,6 +5708,21 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="68.58" y1="93.98" x2="68.58" y2="91.44" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R15" gate="G$1" pin="1"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="180.34" y1="58.42" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
+<junction x="180.34" y="55.88"/>
+<wire x1="180.34" y1="55.88" x2="180.34" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="185.42" y1="63.5" x2="185.42" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="55.88" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<wire x1="238.76" y1="71.12" x2="238.76" y2="68.58" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -5719,6 +5762,11 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <pinref part="U1" gate="G$1" pin="A"/>
 <wire x1="132.08" y1="50.8" x2="137.16" y2="50.8" width="0.1524" layer="91"/>
 <junction x="132.08" y="83.82"/>
+</segment>
+<segment>
+<pinref part="SUPPLY12" gate="G$1" pin="5V"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="238.76" y1="81.28" x2="238.76" y2="78.74" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -5793,8 +5841,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="J9" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="66.04" x2="180.34" y2="66.04" width="0.1524" layer="91"/>
-<label x="172.72" y="66.04" size="1.778" layer="95"/>
+<wire x1="162.56" y1="68.58" x2="172.72" y2="68.58" width="0.1524" layer="91"/>
+<label x="165.1" y="68.58" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="I2" class="0">
@@ -5805,8 +5853,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="J10" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="60.96" x2="180.34" y2="60.96" width="0.1524" layer="91"/>
-<label x="172.72" y="60.96" size="1.778" layer="95"/>
+<wire x1="162.56" y1="63.5" x2="172.72" y2="63.5" width="0.1524" layer="91"/>
+<label x="165.1" y="63.5" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="IRET" class="0">
@@ -5845,8 +5893,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="175.26" y1="76.2" x2="170.18" y2="76.2" width="0.1524" layer="91"/>
-<label x="170.18" y="76.2" size="1.778" layer="95"/>
+<wire x1="167.64" y1="76.2" x2="160.02" y2="76.2" width="0.1524" layer="91"/>
+<label x="160.02" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V-" class="0">
@@ -5862,8 +5910,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="R12" gate="G$1" pin="1"/>
-<wire x1="175.26" y1="86.36" x2="170.18" y2="86.36" width="0.1524" layer="91"/>
-<label x="170.18" y="86.36" size="1.778" layer="95"/>
+<wire x1="172.72" y1="86.36" x2="160.02" y2="86.36" width="0.1524" layer="91"/>
+<label x="160.02" y="86.36" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -5955,8 +6003,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="J12" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="50.8" x2="180.34" y2="50.8" width="0.1524" layer="91"/>
-<label x="172.72" y="50.8" size="1.778" layer="95"/>
+<wire x1="162.56" y1="53.34" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
+<label x="165.1" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V1" class="0">
@@ -5967,8 +6015,8 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </segment>
 <segment>
 <pinref part="J11" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="55.88" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
-<label x="172.72" y="55.88" size="1.778" layer="95"/>
+<wire x1="162.56" y1="58.42" x2="172.72" y2="58.42" width="0.1524" layer="91"/>
+<label x="165.1" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VREF" class="0">
@@ -6310,14 +6358,22 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
 <pinref part="U6" gate="G$1" pin="-IN"/>
+<wire x1="182.88" y1="86.36" x2="185.42" y2="86.36" width="0.1524" layer="91"/>
+<junction x="185.42" y="86.36"/>
 <wire x1="185.42" y1="86.36" x2="187.96" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="2"/>
+<wire x1="185.42" y1="73.66" x2="185.42" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="2"/>
 <pinref part="U6" gate="G$1" pin="+IN"/>
-<wire x1="185.42" y1="76.2" x2="187.96" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="76.2" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
+<junction x="180.34" y="76.2"/>
+<wire x1="180.34" y1="76.2" x2="187.96" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="180.34" y1="76.2" x2="180.34" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
