@@ -5150,6 +5150,138 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </deviceset>
 </devicesets>
 </library>
+<library name="linear" urn="urn:adsk.eagle:library:262">
+<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
+Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TO92" urn="urn:adsk.eagle:footprint:16150/1" library_version="2">
+<description>&lt;b&gt;TO-92&lt;/b&gt;</description>
+<wire x1="-2.095" y1="-1.651" x2="-0.7869" y2="2.5484" width="0.1524" layer="21" curve="-111.097684"/>
+<wire x1="0.7869" y1="2.5484" x2="2.095" y2="-1.651" width="0.1524" layer="21" curve="-111.097684"/>
+<wire x1="-2.095" y1="-1.651" x2="2.095" y2="-1.651" width="0.1524" layer="21"/>
+<wire x1="-2.254" y1="-0.254" x2="-0.286" y2="-0.254" width="0.1524" layer="51"/>
+<wire x1="-2.655" y1="-0.254" x2="-2.254" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="-0.286" y1="-0.254" x2="0.286" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="2.254" y1="-0.254" x2="2.655" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="0.286" y1="-0.254" x2="2.254" y2="-0.254" width="0.1524" layer="51"/>
+<wire x1="-0.7864" y1="2.5484" x2="0.7864" y2="2.5484" width="0.1524" layer="51" curve="-34.298964"/>
+<pad name="1" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="2" x="0" y="1.905" drill="0.8128" shape="octagon"/>
+<pad name="3" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="2.413" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="2.921" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+<package name="SO08" urn="urn:adsk.eagle:footprint:16130/1" library_version="2">
+<description>&lt;b&gt;Small Outline Package 8&lt;/b&gt;&lt;br&gt;
+NS Package M08A</description>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
+<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
+<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
+<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
+<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
+<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="TO92" urn="urn:adsk.eagle:package:16416/2" type="model" library_version="2">
+<description>TO-92</description>
+<packageinstances>
+<packageinstance name="TO92"/>
+</packageinstances>
+</package3d>
+<package3d name="SO08" urn="urn:adsk.eagle:package:16404/2" type="model" library_version="2">
+<description>Small Outline Package 8
+NS Package M08A</description>
+<packageinstances>
+<packageinstance name="SO08"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="LM336" urn="urn:adsk.eagle:symbol:16360/1" library_version="2">
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="0" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="-5.08" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.254" y1="1.27" x2="1.016" y2="1.27" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="1.27" x2="1.016" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="1.016" y1="-1.27" x2="1.778" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="0" y1="-2.032" x2="0" y2="-0.635" width="0.1524" layer="94"/>
+<text x="-5.08" y="3.81" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-7.62" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-1.778" y="-4.191" size="1.524" layer="95">ADJ</text>
+<pin name="A" x="-7.62" y="0" visible="pad" length="short" direction="in"/>
+<pin name="C" x="7.62" y="0" visible="pad" length="short" direction="pas" rot="R180"/>
+<pin name="ADJ" x="0" y="-7.62" visible="pad" length="short" direction="in" rot="R90"/>
+<polygon width="0.1524" layer="94">
+<vertex x="1.016" y="0"/>
+<vertex x="-0.889" y="1.27"/>
+<vertex x="-0.889" y="-1.27"/>
+</polygon>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LM336" urn="urn:adsk.eagle:component:16669/3" prefix="IC" library_version="2">
+<description>&lt;b&gt;2.5-V INTEGRATED REFERENCE CIRCUITS&lt;/b&gt;&lt;p&gt;
+LM236&lt;br&gt;
+Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
+<gates>
+<gate name="G$1" symbol="LM336" x="0" y="0"/>
+</gates>
+<devices>
+<device name="LP" package="TO92">
+<connects>
+<connect gate="G$1" pin="A" pad="3"/>
+<connect gate="G$1" pin="ADJ" pad="1"/>
+<connect gate="G$1" pin="C" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:16416/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="D" package="SO08">
+<connects>
+<connect gate="G$1" pin="A" pad="4"/>
+<connect gate="G$1" pin="ADJ" pad="5"/>
+<connect gate="G$1" pin="C" pad="8"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:16404/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -5186,12 +5318,6 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </part>
 <part name="D2" library="SparkFun-DiscreteSemi" deviceset="DIODE" device="PTH">
 <attribute name="PN" value="1N4001-TPMSCT-ND"/>
-</part>
-<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="10.0KXBK-ND"/>
-</part>
-<part name="R2" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="10.0KXBK-ND"/>
 </part>
 <part name="R3" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="392R">
 <attribute name="PN" value="392XBK-ND"/>
@@ -5355,6 +5481,11 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </part>
 <part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="LM336" device="LP" package3d_urn="urn:adsk.eagle:package:16416/2"/>
+<part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
+<part name="C11" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
+<attribute name="PN" value="BC2665CT-ND"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -5388,12 +5519,6 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <instance part="D2" gate="G$1" x="193.04" y="170.18" rot="MR0">
 <attribute name="PN" x="193.04" y="170.18" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
-<instance part="R1" gate="G$1" x="170.18" y="116.84" rot="R270">
-<attribute name="PN" x="170.18" y="116.84" size="1.778" layer="96" rot="R270" display="off"/>
-</instance>
-<instance part="R2" gate="G$1" x="170.18" y="101.6" rot="R270">
-<attribute name="PN" x="170.18" y="101.6" size="1.778" layer="96" rot="R270" display="off"/>
-</instance>
 <instance part="R3" gate="G$1" x="160.02" y="157.48" rot="MR0">
 <attribute name="PN" x="160.02" y="157.48" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
@@ -5401,7 +5526,7 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <attribute name="PN" x="228.6" y="157.48" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="SUPPLY2" gate="G$1" x="170.18" y="134.62"/>
-<instance part="GND2" gate="1" x="170.18" y="91.44"/>
+<instance part="GND2" gate="1" x="53.34" y="149.86"/>
 <instance part="GND3" gate="1" x="147.32" y="147.32" rot="MR0"/>
 <instance part="GND4" gate="1" x="215.9" y="147.32" rot="MR0"/>
 <instance part="GND5" gate="1" x="124.46" y="91.44"/>
@@ -5562,6 +5687,11 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </instance>
 <instance part="SUPPLY12" gate="G$1" x="238.76" y="81.28"/>
 <instance part="GND18" gate="1" x="238.76" y="66.04"/>
+<instance part="IC1" gate="G$1" x="53.34" y="167.64" rot="R90"/>
+<instance part="SUPPLY14" gate="G$1" x="53.34" y="177.8"/>
+<instance part="C11" gate="G$1" x="63.5" y="160.02">
+<attribute name="PN" x="63.5" y="160.02" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -5592,11 +5722,6 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <pinref part="U6" gate="G$1" pin="-VS"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="195.58" y1="68.58" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R2" gate="G$1" pin="2"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="170.18" y1="93.98" x2="170.18" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
@@ -5723,6 +5848,16 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="238.76" y1="71.12" x2="238.76" y2="68.58" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="A"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="53.34" y1="160.02" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
+<junction x="53.34" y="154.94"/>
+<wire x1="53.34" y1="154.94" x2="53.34" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="154.94" x2="63.5" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="154.94" x2="63.5" y2="157.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -5730,9 +5865,6 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <wire x1="157.48" y1="127" x2="170.18" y2="127" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="127" x2="170.18" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="5V"/>
-<wire x1="170.18" y1="127" x2="170.18" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<junction x="170.18" y="127"/>
 </segment>
 <segment>
 <pinref part="SUPPLY6" gate="G$1" pin="5V"/>
@@ -5767,6 +5899,11 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 <pinref part="SUPPLY12" gate="G$1" pin="5V"/>
 <pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="238.76" y1="81.28" x2="238.76" y2="78.74" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SUPPLY14" gate="G$1" pin="5V"/>
+<pinref part="IC1" gate="G$1" pin="C"/>
+<wire x1="53.34" y1="177.8" x2="53.34" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6021,13 +6158,13 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </net>
 <net name="VREF" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="111.76" x2="170.18" y2="109.22" width="0.1524" layer="91"/>
-<junction x="170.18" y="109.22"/>
-<wire x1="170.18" y1="109.22" x2="170.18" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="109.22" x2="175.26" y2="109.22" width="0.1524" layer="91"/>
-<label x="170.18" y="109.22" size="1.778" layer="95"/>
+<label x="60.96" y="167.64" size="1.778" layer="95"/>
+<pinref part="IC1" gate="G$1" pin="ADJ"/>
+<wire x1="60.96" y1="167.64" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
+<junction x="63.5" y="167.64"/>
+<wire x1="63.5" y1="167.64" x2="68.58" y2="167.64" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="165.1" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="REF"/>
@@ -6381,4 +6518,21 @@ Source: &lt;a href="http://www.te.com/commerce/DocumentDelivery/DDEController?Ac
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="8.2" severity="warning">
+Since Version 8.2, EAGLE supports online libraries. The ids
+of those online libraries will not be understood (or retained)
+with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
+</note>
+</compatibility>
 </eagle>

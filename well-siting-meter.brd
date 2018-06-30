@@ -619,6 +619,38 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </package>
 </packages>
 </library>
+<library name="linear" urn="urn:adsk.eagle:library:262">
+<description>&lt;b&gt;Linear Devices&lt;/b&gt;&lt;p&gt;
+Operational amplifiers,  comparators, voltage regulators, ADCs, DACs, etc.&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TO92" urn="urn:adsk.eagle:footprint:16150/1" library_version="2">
+<description>&lt;b&gt;TO-92&lt;/b&gt;</description>
+<wire x1="-2.095" y1="-1.651" x2="-0.7869" y2="2.5484" width="0.1524" layer="21" curve="-111.097684"/>
+<wire x1="0.7869" y1="2.5484" x2="2.095" y2="-1.651" width="0.1524" layer="21" curve="-111.097684"/>
+<wire x1="-2.095" y1="-1.651" x2="2.095" y2="-1.651" width="0.1524" layer="21"/>
+<wire x1="-2.254" y1="-0.254" x2="-0.286" y2="-0.254" width="0.1524" layer="51"/>
+<wire x1="-2.655" y1="-0.254" x2="-2.254" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="-0.286" y1="-0.254" x2="0.286" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="2.254" y1="-0.254" x2="2.655" y2="-0.254" width="0.1524" layer="21"/>
+<wire x1="0.286" y1="-0.254" x2="2.254" y2="-0.254" width="0.1524" layer="51"/>
+<wire x1="-0.7864" y1="2.5484" x2="0.7864" y2="2.5484" width="0.1524" layer="51" curve="-34.298964"/>
+<pad name="1" x="-1.27" y="0" drill="0.8128" shape="octagon"/>
+<pad name="2" x="0" y="1.905" drill="0.8128" shape="octagon"/>
+<pad name="3" x="1.27" y="0" drill="0.8128" shape="octagon"/>
+<text x="2.413" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="2.921" y="-1.27" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="TO92" urn="urn:adsk.eagle:package:16416/2" type="model" library_version="2">
+<description>TO-92</description>
+<packageinstances>
+<packageinstance name="TO92"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -847,16 +879,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PN" value="1N4001-TPMSCT-ND" x="8.89" y="8.89" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="5.969" y="8.382" size="1.016" layer="21" ratio="12"/>
 </element>
-<element name="R1" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="8.89" y="53.34" smashed="yes">
-<attribute name="NAME" x="5.715" y="55.245" size="0.8128" layer="25" font="vector" ratio="10"/>
-<attribute name="PN" value="10.0KXBK-ND" x="8.89" y="53.34" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="6.604" y="52.959" size="0.8128" layer="27" font="vector" ratio="10"/>
-</element>
-<element name="R2" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="22.86" y="53.34" smashed="yes">
-<attribute name="NAME" x="19.685" y="55.245" size="0.8128" layer="25" font="vector" ratio="10"/>
-<attribute name="PN" value="10.0KXBK-ND" x="22.86" y="53.34" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="20.574" y="52.959" size="0.8128" layer="27" font="vector" ratio="10"/>
-</element>
 <element name="R3" library="SparkFun-Passives" package="AXIAL-0.4" value="392R" x="17.272" y="20.32" smashed="yes" rot="R270">
 <attribute name="NAME" x="14.859" y="23.495" size="0.8128" layer="25" font="vector" ratio="10" rot="R270"/>
 <attribute name="PN" value="392XBK-ND" x="17.272" y="20.32" size="1.778" layer="27" rot="R270" display="off"/>
@@ -924,10 +946,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PN" value="SW406-ND" x="87.63" y="52.07" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="PROD_ID" value=" SWCH-08441" x="87.63" y="52.07" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="C1" library="SparkFun-Passives" package="CPOL-RADIAL-1000UF-25V" value="100uF" x="59.69" y="26.67" smashed="yes">
-<attribute name="NAME" x="58.928" y="28.321" size="0.8128" layer="25" font="vector"/>
-<attribute name="PN" value="1572-1306-ND" x="59.69" y="26.67" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="57.023" y="23.368" size="0.8128" layer="27" font="vector"/>
+<element name="C1" library="SparkFun-Passives" package="CPOL-RADIAL-1000UF-25V" value="100uF" x="59.69" y="26.67" smashed="yes" rot="R180">
+<attribute name="NAME" x="60.452" y="25.019" size="0.8128" layer="25" font="vector" rot="R180"/>
+<attribute name="PN" value="1572-1306-ND" x="59.69" y="26.67" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="62.357" y="29.972" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="C2" library="SparkFun-Passives" package="CAP-PTH-5MM" value="0.1uf" x="49.53" y="24.13" smashed="yes" rot="R90">
 <attribute name="NAME" x="48.26" y="22.098" size="0.8128" layer="25" font="vector" rot="R90"/>
@@ -1043,12 +1065,12 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="80.338" y="6.077" size="1.27" layer="27" rot="R180" align="center"/>
 </element>
 <element name="R12" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="8.89" y="34.29" smashed="yes">
-<attribute name="NAME" x="5.715" y="36.195" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="14.605" y="33.147" size="0.8128" layer="25" font="vector" ratio="10" align="top-right"/>
 <attribute name="PN" value="10.0KXBK-ND" x="8.89" y="34.29" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="6.604" y="33.909" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
 <element name="R13" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="8.89" y="30.48" smashed="yes">
-<attribute name="NAME" x="9.779" y="28.067" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="14.351" y="29.337" size="0.8128" layer="25" font="vector" ratio="10" align="top-right"/>
 <attribute name="PN" value="10.0KXBK-ND" x="8.89" y="30.48" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="6.604" y="30.099" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
@@ -1063,9 +1085,18 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="VALUE" x="25.146" y="30.861" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="C5" library="SparkFun-Passives" package="CAP-PTH-5MM" value="0.1uf" x="8.89" y="38.1" smashed="yes">
-<attribute name="NAME" x="5.588" y="39.37" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="NAME" x="11.684" y="37.084" size="0.8128" layer="25" font="vector" ratio="10" align="top-right"/>
 <attribute name="PN" value="BC2665CT-ND" x="8.89" y="38.1" size="0.8128" layer="27" font="vector" display="off"/>
-<attribute name="VALUE" x="7.874" y="39.116" size="0.8128" layer="27" font="vector" ratio="10"/>
+<attribute name="VALUE" x="6.604" y="39.116" size="0.8128" layer="27" font="vector" ratio="10"/>
+</element>
+<element name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" package="TO92" package3d_urn="urn:adsk.eagle:package:16416/2" value="LM336LP" x="22.86" y="53.594" smashed="yes">
+<attribute name="NAME" x="25.273" y="55.245" size="0.8128" layer="25" font="vector" ratio="10"/>
+<attribute name="VALUE" x="25.781" y="52.324" size="0.8128" layer="27" font="vector" ratio="10"/>
+</element>
+<element name="C11" library="SparkFun-Passives" package="CAP-PTH-5MM" value="0.1uf" x="8.89" y="53.34" smashed="yes" rot="R180">
+<attribute name="NAME" x="11.684" y="52.324" size="0.8128" layer="25" font="vector" ratio="10" rot="R180"/>
+<attribute name="PN" value="BC2665CT-ND" x="8.89" y="53.34" size="0.8128" layer="27" font="vector" ratio="10" rot="R180" display="off"/>
+<attribute name="VALUE" x="9.906" y="54.864" size="0.8128" layer="27" font="vector" ratio="10" rot="R180"/>
 </element>
 </elements>
 <signals>
@@ -1075,7 +1106,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="U2" pad="4"/>
 <contactref element="U5" pad="4"/>
 <contactref element="U6" pad="4"/>
-<contactref element="R2" pad="P$2"/>
 <contactref element="R7" pad="P$2"/>
 <contactref element="J2" pad="2"/>
 <contactref element="C7" pad="2"/>
@@ -1108,12 +1138,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="R15" pad="P$1"/>
 <contactref element="R14" pad="P$1"/>
 <contactref element="C5" pad="2"/>
+<contactref element="IC1" pad="3"/>
+<contactref element="C11" pad="2"/>
 </signal>
 <signal name="5V">
 <contactref element="U2" pad="21"/>
 <contactref element="U5" pad="7"/>
 <contactref element="U6" pad="7"/>
-<contactref element="R1" pad="P$1"/>
 <contactref element="J2" pad="3"/>
 <contactref element="C7" pad="1"/>
 <contactref element="U1" pad="2"/>
@@ -1125,6 +1156,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="-1.27" y="31.75"/>
 </polygon>
 <contactref element="C5" pad="1"/>
+<contactref element="IC1" pad="2"/>
 </signal>
 <signal name="N$1">
 <contactref element="Q2" pad="3"/>
@@ -1194,11 +1226,11 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="I2">
 <contactref element="U3" pad="4"/>
 <contactref element="J10" pad="P$1"/>
-<wire x1="22.86" y1="53.594" x2="22.86" y2="24.13" width="0.8128" layer="16"/>
+<wire x1="22.86" y1="49.784" x2="22.86" y2="24.13" width="0.8128" layer="16"/>
 <wire x1="20.32" y1="21.59" x2="22.86" y2="24.13" width="0.8128" layer="16"/>
-<wire x1="22.86" y1="53.594" x2="26.162" y2="56.896" width="0.8128" layer="16"/>
-<wire x1="26.162" y1="56.896" x2="34.798" y2="56.896" width="0.8128" layer="16"/>
-<wire x1="34.798" y1="56.896" x2="38.862" y2="60.96" width="0.8128" layer="16"/>
+<wire x1="38.862" y1="60.96" x2="34.798" y2="56.896" width="0.8128" layer="16"/>
+<wire x1="34.798" y1="56.896" x2="29.972" y2="56.896" width="0.8128" layer="16"/>
+<wire x1="29.972" y1="56.896" x2="22.86" y2="49.784" width="0.8128" layer="16"/>
 </signal>
 <signal name="IRET">
 <contactref element="U3" pad="3"/>
@@ -1279,7 +1311,8 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="U4" pad="4"/>
 <contactref element="J12" pad="P$1"/>
 <wire x1="6.35" y1="60.96" x2="8.89" y2="58.42" width="0.8128" layer="16"/>
-<wire x1="8.89" y1="58.42" x2="8.89" y2="24.13" width="0.8128" layer="16"/>
+<wire x1="8.89" y1="58.42" x2="8.89" y2="49.53" width="0.8128" layer="16"/>
+<wire x1="8.89" y1="49.53" x2="8.89" y2="24.13" width="0.8128" layer="16"/>
 <wire x1="6.35" y1="21.59" x2="8.89" y2="24.13" width="0.8128" layer="16"/>
 </signal>
 <signal name="V1">
@@ -1287,24 +1320,25 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="J11" pad="P$1"/>
 <wire x1="11.43" y1="21.59" x2="15.24" y2="25.4" width="0.8128" layer="16"/>
 <wire x1="15.24" y1="25.4" x2="15.24" y2="29.21" width="0.8128" layer="16"/>
-<wire x1="15.24" y1="29.21" x2="16.002" y2="29.972" width="0.8128" layer="16"/>
-<wire x1="16.002" y1="29.972" x2="16.002" y2="54.356" width="0.8128" layer="16"/>
-<wire x1="16.002" y1="54.356" x2="22.606" y2="60.96" width="0.8128" layer="16"/>
+<wire x1="16.002" y1="29.972" x2="15.24" y2="29.21" width="0.8128" layer="16"/>
+<wire x1="22.606" y1="60.96" x2="16.002" y2="54.356" width="0.8128" layer="16"/>
+<wire x1="16.002" y1="54.356" x2="16.002" y2="29.972" width="0.8128" layer="16"/>
 </signal>
 <signal name="VREF">
-<contactref element="R1" pad="P$2"/>
-<contactref element="R2" pad="P$1"/>
 <contactref element="U5" pad="5"/>
 <contactref element="U6" pad="5"/>
-<wire x1="13.97" y1="53.34" x2="17.78" y2="53.34" width="0.3048" layer="1"/>
-<wire x1="17.78" y1="53.34" x2="17.78" y2="50.8" width="0.3048" layer="16"/>
-<wire x1="17.78" y1="50.8" x2="19.05" y2="49.53" width="0.3048" layer="16"/>
-<wire x1="10.16" y1="49.53" x2="13.97" y2="53.34" width="0.3048" layer="1"/>
-<wire x1="5.08" y1="49.53" x2="10.16" y2="49.53" width="0.3048" layer="1"/>
 <contactref element="U6" pad="1"/>
 <wire x1="19.05" y1="49.53" x2="16.002" y2="46.482" width="0.3048" layer="1"/>
 <wire x1="16.002" y1="46.482" x2="16.002" y2="45.212" width="0.3048" layer="1"/>
 <wire x1="16.002" y1="45.212" x2="12.7" y2="41.91" width="0.3048" layer="1"/>
+<contactref element="IC1" pad="1"/>
+<wire x1="19.05" y1="49.53" x2="21.59" y2="52.07" width="0.3048" layer="16"/>
+<wire x1="21.59" y1="52.07" x2="21.59" y2="53.594" width="0.3048" layer="16"/>
+<contactref element="C11" pad="1"/>
+<wire x1="11.39" y1="53.34" x2="7.58" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="7.58" y1="49.53" x2="5.08" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="11.39" y1="53.34" x2="11.644" y2="53.594" width="0.3048" layer="1"/>
+<wire x1="11.644" y1="53.594" x2="21.59" y2="53.594" width="0.3048" layer="1"/>
 </signal>
 <signal name="V_BATT">
 <contactref element="D1" pad="C"/>
@@ -1551,4 +1585,21 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 </signals>
 </board>
 </drawing>
+<compatibility>
+<note version="8.2" severity="warning">
+Since Version 8.2, EAGLE supports online libraries. The ids
+of those online libraries will not be understood (or retained)
+with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
+</note>
+</compatibility>
 </eagle>
