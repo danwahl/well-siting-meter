@@ -5481,7 +5481,9 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 </part>
 <part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="LM336" device="LP" package3d_urn="urn:adsk.eagle:package:16416/2"/>
+<part name="IC1" library="linear" library_urn="urn:adsk.eagle:library:262" deviceset="LM336" device="LP" package3d_urn="urn:adsk.eagle:package:16416/2">
+<attribute name="PN" value="LM336Z25-ND"/>
+</part>
 <part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
 <part name="C11" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
 <attribute name="PN" value="BC2665CT-ND"/>
@@ -5687,7 +5689,9 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 </instance>
 <instance part="SUPPLY12" gate="G$1" x="238.76" y="81.28"/>
 <instance part="GND18" gate="1" x="238.76" y="66.04"/>
-<instance part="IC1" gate="G$1" x="53.34" y="167.64" rot="R90"/>
+<instance part="IC1" gate="G$1" x="53.34" y="167.64" rot="R90">
+<attribute name="PN" x="53.34" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="SUPPLY14" gate="G$1" x="53.34" y="177.8"/>
 <instance part="C11" gate="G$1" x="63.5" y="160.02">
 <attribute name="PN" x="63.5" y="160.02" size="1.778" layer="96" display="off"/>
@@ -6471,9 +6475,9 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <label x="86.36" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="A5"/>
-<wire x1="134.62" y1="99.06" x2="127" y2="99.06" width="0.1524" layer="91"/>
-<label x="127" y="99.06" size="1.778" layer="95"/>
+<pinref part="U2" gate="G$1" pin="7"/>
+<wire x1="134.62" y1="111.76" x2="127" y2="111.76" width="0.1524" layer="91"/>
+<label x="127" y="111.76" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="FUSE" class="0">
