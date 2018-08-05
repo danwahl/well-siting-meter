@@ -7,6 +7,7 @@
 #define VO_PIN          3
 #define B1_PIN          4
 #define B2_PIN          5
+#define RSW_PIN         7
 #define ISW_PIN         8
 #define VSW_PIN         9
 #define DB7_PIN         10
@@ -20,7 +21,7 @@
 
 // other variables
 #define ADC_MAX         1023.0f
-#define V_GAIN          2.0f
+#define V_GAIN          5.42f
 #define I_GAIN          49.78f
 #define R_SENSE         0.05f
 #define NUM_MEAS        10
@@ -31,7 +32,7 @@
 #define MEAS_TIMEOUT    25
 #define STOP_TIMEOUT    2000
 #define BOOST_TIMEOUT   500
-#define DIR_TIMEOUT     100
+#define RELAY_TIMEOUT   100  
 
 // button state
 enum {
@@ -95,6 +96,7 @@ void setup() {
   pinMode(B2_PIN, INPUT_PULLUP);
 
   // setup switches
+  pinMode(RSW_PIN, OUTPUT);
   pinMode(ISW_PIN, OUTPUT);
   pinMode(VSW_PIN, OUTPUT);
 
@@ -172,6 +174,15 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print("|###           |");
 
+      // enable rsw
+      digitalWrite(RSW_PIN, HIGH);
+
+      // wait for relay to enable
+      if(wait(B2_PIN, RELAY_TIMEOUT) <= 0) {
+        reset(START);
+        return;
+      }
+
       // measure gnd
       float vgfwd, vgrev, _;
       if(meas(OFF, FWD, vgfwd, _) <= 0) {
@@ -235,11 +246,14 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print("|##############|");
 
+      // disable rsw
+      digitalWrite(RSW_PIN, LOW);
+
       // wait and transition
       wait(0, STOP_TIMEOUT);
       state = RESULTS;
       break;
-    case(RESULTS):
+    case(RESULTS): 
       // calculate results
       vout = (vfwd - vrev)/2.0f;
       iout = (ifwd + irev)/2.0f;
@@ -256,6 +270,15 @@ void loop() {
       lcd.print("iout = ");
       lcd.setCursor(8, 1);
       lcd.print(iout);
+
+      // disable rsw
+      digitalWrite(RSW_PIN, LOW);
+
+      // wait for relay to enable
+      if(wait(B2_PIN, RELAY_TIMEOUT) <= 0) {
+        reset(START);
+        return;
+      }
 
       // wait for button press
       if(wait(B2_PIN, -1) <= 0) {
@@ -287,7 +310,7 @@ int meas(int boost, int dir, float &vval, float &ival) {
 #endif
 
     // wait for switch
-    if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+    if(wait(B2_PIN, RELAY_TIMEOUT) <= 0) {
       return 0;
     }
   }
@@ -319,7 +342,7 @@ int meas(int boost, int dir, float &vval, float &ival) {
 #endif
 
     // wait for switch
-    if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+    if(wait(B2_PIN, RELAY_TIMEOUT) <= 0) {
       return 0;
     }
   }
@@ -354,7 +377,7 @@ int meas(int boost, int dir, float &vval, float &ival) {
 #endif
 
   // wait for switch
-  if(wait(B2_PIN, DIR_TIMEOUT) <= 0) {
+  if(wait(B2_PIN, RELAY_TIMEOUT) <= 0) {
     return 0;
   }
 
@@ -434,6 +457,7 @@ void reset(int next) {
 #endif
 
   digitalWrite(SHDN_PIN, HIGH);
+  digitalWrite(RSW_PIN, LOW);
   digitalWrite(ISW_PIN, FWD);
   digitalWrite(VSW_PIN, FWD);
 
