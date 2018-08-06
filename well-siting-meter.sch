@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.0">
+<eagle version="9.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5463,17 +5463,17 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <part name="K1" library="oje" deviceset="OJE-SH-105HM,000" device="" value="">
 <attribute name="PN" value="PB876-ND"/>
 </part>
-<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="10.0KXBK-ND"/>
-</part>
-<part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
-<attribute name="PN" value="10.0KXBK-ND"/>
-</part>
-<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
+<part name="R12" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
 <attribute name="PN" value="44.2KXBK-ND"/>
 </part>
-<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
+<part name="R13" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="44.2K">
 <attribute name="PN" value="44.2KXBK-ND"/>
+</part>
+<part name="R14" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
+</part>
+<part name="R15" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="10K">
+<attribute name="PN" value="10.0KXBK-ND"/>
 </part>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="C5" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
@@ -5485,8 +5485,8 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <attribute name="PN" value="LM336Z25-ND"/>
 </part>
 <part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="5V" device=""/>
-<part name="C11" library="SparkFun-Passives" deviceset="CAP" device="PTH1" value="0.1uf">
-<attribute name="PN" value="BC2665CT-ND"/>
+<part name="R1" library="SparkFun-Passives" deviceset="RESISTOR" device="PTH-1/4W" value="2.05K">
+<attribute name="PN" value="2.05KXBK-ND"/>
 </part>
 </parts>
 <sheets>
@@ -5528,7 +5528,7 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <attribute name="PN" x="228.6" y="157.48" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="SUPPLY2" gate="G$1" x="170.18" y="134.62"/>
-<instance part="GND2" gate="1" x="53.34" y="149.86"/>
+<instance part="GND2" gate="1" x="53.34" y="137.16"/>
 <instance part="GND3" gate="1" x="147.32" y="147.32" rot="MR0"/>
 <instance part="GND4" gate="1" x="215.9" y="147.32" rot="MR0"/>
 <instance part="GND5" gate="1" x="124.46" y="91.44"/>
@@ -5674,27 +5674,27 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <instance part="R12" gate="G$1" x="177.8" y="86.36">
 <attribute name="PN" x="177.8" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R13" gate="G$1" x="172.72" y="76.2">
-<attribute name="PN" x="172.72" y="76.2" size="1.778" layer="96" display="off"/>
+<instance part="R13" gate="G$1" x="170.18" y="76.2">
+<attribute name="PN" x="170.18" y="76.2" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="R14" gate="G$1" x="185.42" y="68.58" rot="R90">
 <attribute name="PN" x="185.42" y="68.58" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="R15" gate="G$1" x="180.34" y="63.5" rot="R90">
-<attribute name="PN" x="180.34" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
+<instance part="R15" gate="G$1" x="177.8" y="63.5" rot="R90">
+<attribute name="PN" x="177.8" y="63.5" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="GND17" gate="1" x="180.34" y="50.8"/>
+<instance part="GND17" gate="1" x="177.8" y="50.8"/>
 <instance part="C5" gate="G$1" x="238.76" y="73.66">
 <attribute name="PN" x="238.76" y="73.66" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY12" gate="G$1" x="238.76" y="81.28"/>
 <instance part="GND18" gate="1" x="238.76" y="66.04"/>
-<instance part="IC1" gate="G$1" x="53.34" y="167.64" rot="R90">
-<attribute name="PN" x="53.34" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
+<instance part="IC1" gate="G$1" x="53.34" y="149.86" rot="R90">
+<attribute name="PN" x="53.34" y="149.86" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="SUPPLY14" gate="G$1" x="53.34" y="177.8"/>
-<instance part="C11" gate="G$1" x="63.5" y="160.02">
-<attribute name="PN" x="63.5" y="160.02" size="1.778" layer="96" display="off"/>
+<instance part="SUPPLY14" gate="G$1" x="53.34" y="175.26"/>
+<instance part="R1" gate="G$1" x="53.34" y="167.64" rot="R90">
+<attribute name="PN" x="53.34" y="167.64" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -5840,12 +5840,12 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <segment>
 <pinref part="R15" gate="G$1" pin="1"/>
 <pinref part="GND17" gate="1" pin="GND"/>
-<wire x1="180.34" y1="58.42" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
-<junction x="180.34" y="55.88"/>
-<wire x1="180.34" y1="55.88" x2="180.34" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="58.42" x2="177.8" y2="55.88" width="0.1524" layer="91"/>
+<junction x="177.8" y="55.88"/>
+<wire x1="177.8" y1="55.88" x2="177.8" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R14" gate="G$1" pin="1"/>
 <wire x1="185.42" y1="63.5" x2="185.42" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="55.88" x2="180.34" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="185.42" y1="55.88" x2="177.8" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
@@ -5855,12 +5855,7 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <segment>
 <pinref part="IC1" gate="G$1" pin="A"/>
 <pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="53.34" y1="160.02" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
-<junction x="53.34" y="154.94"/>
-<wire x1="53.34" y1="154.94" x2="53.34" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C11" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="154.94" x2="63.5" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="63.5" y1="154.94" x2="63.5" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="142.24" x2="53.34" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="5V" class="0">
@@ -5906,8 +5901,8 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 </segment>
 <segment>
 <pinref part="SUPPLY14" gate="G$1" pin="5V"/>
-<pinref part="IC1" gate="G$1" pin="C"/>
-<wire x1="53.34" y1="177.8" x2="53.34" y2="175.26" width="0.1524" layer="91"/>
+<pinref part="R1" gate="G$1" pin="2"/>
+<wire x1="53.34" y1="175.26" x2="53.34" y2="172.72" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6034,7 +6029,7 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 </segment>
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="167.64" y1="76.2" x2="160.02" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="76.2" x2="160.02" y2="76.2" width="0.1524" layer="91"/>
 <label x="160.02" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -6162,15 +6157,6 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 </net>
 <net name="VREF" class="0">
 <segment>
-<label x="60.96" y="167.64" size="1.778" layer="95"/>
-<pinref part="IC1" gate="G$1" pin="ADJ"/>
-<wire x1="60.96" y1="167.64" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
-<junction x="63.5" y="167.64"/>
-<wire x1="63.5" y1="167.64" x2="68.58" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="C11" gate="G$1" pin="1"/>
-<wire x1="63.5" y1="165.1" x2="63.5" y2="167.64" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U5" gate="G$1" pin="REF"/>
 <wire x1="200.66" y1="114.3" x2="200.66" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="111.76" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
@@ -6187,6 +6173,15 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <wire x1="198.12" y1="91.44" x2="198.12" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="198.12" y1="93.98" x2="205.74" y2="93.98" width="0.1524" layer="91"/>
 <label x="200.66" y="93.98" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="IC1" gate="G$1" pin="C"/>
+<wire x1="53.34" y1="162.56" x2="53.34" y2="160.02" width="0.1524" layer="91"/>
+<junction x="53.34" y="160.02"/>
+<wire x1="53.34" y1="160.02" x2="53.34" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="160.02" x2="45.72" y2="160.02" width="0.1524" layer="91"/>
+<label x="45.72" y="160.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V_BATT" class="0">
@@ -6510,11 +6505,11 @@ Source: http://focus.ti.com/lit/ds/symlink/lm336-2.5.pdf</description>
 <segment>
 <pinref part="R13" gate="G$1" pin="2"/>
 <pinref part="U6" gate="G$1" pin="+IN"/>
-<wire x1="177.8" y1="76.2" x2="180.34" y2="76.2" width="0.1524" layer="91"/>
-<junction x="180.34" y="76.2"/>
-<wire x1="180.34" y1="76.2" x2="187.96" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="76.2" x2="177.8" y2="76.2" width="0.1524" layer="91"/>
+<junction x="177.8" y="76.2"/>
+<wire x1="177.8" y1="76.2" x2="187.96" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="180.34" y1="76.2" x2="180.34" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="76.2" x2="177.8" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

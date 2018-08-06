@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.0">
+<eagle version="9.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -155,7 +155,7 @@
 <wire x1="0" y1="3.81" x2="3.81" y2="0" width="0" layer="20" curve="-90"/>
 <text x="92.71" y="42.418" size="1.4224" layer="121" font="vector" ratio="10" rot="R90">well-siting-meter</text>
 <text x="87.63" y="40.64" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">v2</text>
-<text x="92.71" y="34.29" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">danwahl.net/</text>
+<text x="92.71" y="31.242" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">justdesign.coop/</text>
 <text x="87.63" y="64.77" size="1.016" layer="121" font="vector" ratio="10" align="center">BATT</text>
 <text x="71.374" y="64.77" size="1.016" layer="121" font="vector" ratio="10" align="center">GND</text>
 <text x="54.61" y="64.77" size="1.016" layer="122" font="vector" ratio="10" rot="MR0" align="center">I1</text>
@@ -168,7 +168,7 @@
 <text x="38.862" y="64.77" size="1.016" layer="122" font="vector" ratio="10" rot="MR0" align="center">I2</text>
 <text x="22.606" y="64.77" size="1.016" layer="122" font="vector" ratio="10" rot="MR0" align="center">V1</text>
 <text x="6.35" y="64.77" size="1.016" layer="122" font="vector" ratio="10" rot="MR0" align="center">V2</text>
-<text x="88.9" y="40.64" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">rev B</text>
+<text x="88.9" y="40.64" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">rev C</text>
 <text x="87.884" y="46.99" size="0.8128" layer="121" font="vector" ratio="10" rot="R90">sn:</text>
 <rectangle x1="86.36" y1="49.53" x2="88.9" y2="54.61" layer="121"/>
 </plain>
@@ -735,6 +735,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <param name="checkRestrict" value="1"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -1064,24 +1067,24 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="RS_PRICE/STOCK" value="http://uk.rs-online.com/web/p/products/1639319" x="72.39" y="2.54" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="80.338" y="6.077" size="1.27" layer="27" rot="R180" align="center"/>
 </element>
-<element name="R12" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="8.89" y="34.29" smashed="yes">
+<element name="R12" library="SparkFun-Passives" package="AXIAL-0.4" value="44.2K" x="8.89" y="34.29" smashed="yes">
 <attribute name="NAME" x="14.605" y="33.147" size="0.8128" layer="25" font="vector" ratio="10" align="top-right"/>
-<attribute name="PN" value="10.0KXBK-ND" x="8.89" y="34.29" size="1.778" layer="27" display="off"/>
+<attribute name="PN" value="44.2KXBK-ND" x="8.89" y="34.29" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="6.604" y="33.909" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
-<element name="R13" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="8.89" y="30.48" smashed="yes">
+<element name="R13" library="SparkFun-Passives" package="AXIAL-0.4" value="44.2K" x="8.89" y="30.48" smashed="yes">
 <attribute name="NAME" x="14.351" y="29.337" size="0.8128" layer="25" font="vector" ratio="10" align="top-right"/>
-<attribute name="PN" value="10.0KXBK-ND" x="8.89" y="30.48" size="1.778" layer="27" display="off"/>
+<attribute name="PN" value="44.2KXBK-ND" x="8.89" y="30.48" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="6.604" y="30.099" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
-<element name="R14" library="SparkFun-Passives" package="AXIAL-0.4" value="44.2K" x="22.86" y="34.29" smashed="yes" rot="R180">
+<element name="R14" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="22.86" y="34.29" smashed="yes" rot="R180">
 <attribute name="NAME" x="28.575" y="33.147" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="PN" value="44.2KXBK-ND" x="22.86" y="34.29" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PN" value="10.0KXBK-ND" x="22.86" y="34.29" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.146" y="34.671" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
-<element name="R15" library="SparkFun-Passives" package="AXIAL-0.4" value="44.2K" x="22.86" y="30.48" smashed="yes" rot="R180">
+<element name="R15" library="SparkFun-Passives" package="AXIAL-0.4" value="10K" x="22.86" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="28.575" y="29.337" size="0.8128" layer="25" font="vector" rot="R180"/>
-<attribute name="PN" value="44.2KXBK-ND" x="22.86" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="PN" value="10.0KXBK-ND" x="22.86" y="30.48" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="25.146" y="30.861" size="0.8128" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="C5" library="SparkFun-Passives" package="CAP-PTH-5MM" value="0.1uf" x="8.89" y="38.1" smashed="yes">
@@ -1094,10 +1097,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <attribute name="PN" value="LM336Z25-ND" x="22.86" y="53.594" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="25.781" y="52.324" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
-<element name="C11" library="SparkFun-Passives" package="CAP-PTH-5MM" value="0.1uf" x="8.89" y="53.34" smashed="yes" rot="R180">
-<attribute name="NAME" x="9.144" y="54.864" size="0.8128" layer="25" font="vector" ratio="10" rot="R180"/>
-<attribute name="PN" value="BC2665CT-ND" x="8.89" y="53.34" size="0.8128" layer="27" font="vector" ratio="10" rot="R180" display="off"/>
-<attribute name="VALUE" x="12.446" y="52.324" size="0.8128" layer="27" font="vector" ratio="10" rot="R180"/>
+<element name="R1" library="SparkFun-Passives" package="AXIAL-0.4" value="2.05K" x="8.89" y="53.34" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.985" y="55.753" size="0.8128" layer="25" font="vector" ratio="15" rot="R180"/>
+<attribute name="PN" value="2.05KXBK-ND" x="8.89" y="53.34" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="VALUE" x="11.176" y="53.721" size="0.8128" layer="21" font="vector" ratio="15" rot="R180"/>
 </element>
 </elements>
 <signals>
@@ -1140,7 +1143,6 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <contactref element="R14" pad="P$1"/>
 <contactref element="C5" pad="2"/>
 <contactref element="IC1" pad="3"/>
-<contactref element="C11" pad="2"/>
 </signal>
 <signal name="5V">
 <contactref element="U2" pad="21"/>
@@ -1157,7 +1159,7 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <vertex x="-1.27" y="31.75"/>
 </polygon>
 <contactref element="C5" pad="1"/>
-<contactref element="IC1" pad="2"/>
+<contactref element="R1" pad="P$2"/>
 </signal>
 <signal name="N$1">
 <contactref element="Q2" pad="3"/>
@@ -1332,14 +1334,15 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="19.05" y1="49.53" x2="16.002" y2="46.482" width="0.3048" layer="1"/>
 <wire x1="16.002" y1="46.482" x2="16.002" y2="45.212" width="0.3048" layer="1"/>
 <wire x1="16.002" y1="45.212" x2="12.7" y2="41.91" width="0.3048" layer="1"/>
-<contactref element="IC1" pad="1"/>
-<wire x1="19.05" y1="49.53" x2="21.59" y2="52.07" width="0.3048" layer="16"/>
-<wire x1="21.59" y1="52.07" x2="21.59" y2="53.594" width="0.3048" layer="16"/>
-<contactref element="C11" pad="1"/>
-<wire x1="11.39" y1="53.34" x2="7.58" y2="49.53" width="0.3048" layer="1"/>
-<wire x1="7.58" y1="49.53" x2="5.08" y2="49.53" width="0.3048" layer="1"/>
-<wire x1="11.39" y1="53.34" x2="11.644" y2="53.594" width="0.3048" layer="1"/>
-<wire x1="11.644" y1="53.594" x2="21.59" y2="53.594" width="0.3048" layer="1"/>
+<contactref element="R1" pad="P$1"/>
+<contactref element="IC1" pad="2"/>
+<wire x1="8.89" y1="49.53" x2="12.7" y2="53.34" width="0.3048" layer="1"/>
+<wire x1="12.7" y1="53.34" x2="13.97" y2="53.34" width="0.3048" layer="1"/>
+<wire x1="5.08" y1="49.53" x2="8.89" y2="49.53" width="0.3048" layer="1"/>
+<wire x1="13.97" y1="53.34" x2="16.129" y2="55.499" width="0.3048" layer="1"/>
+<wire x1="16.129" y1="55.499" x2="22.86" y2="55.499" width="0.3048" layer="1"/>
+<wire x1="22.86" y1="53.34" x2="22.86" y2="55.499" width="0.3048" layer="16"/>
+<wire x1="19.05" y1="49.53" x2="22.86" y2="53.34" width="0.3048" layer="16"/>
 </signal>
 <signal name="V_BATT">
 <contactref element="D1" pad="C"/>
@@ -1511,10 +1514,10 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <signal name="N$14">
 <contactref element="U6" pad="6"/>
 <contactref element="R11" pad="P$1"/>
-<wire x1="34.29" y1="54.61" x2="31.75" y2="52.07" width="0.3048" layer="1"/>
-<wire x1="13.462" y1="52.07" x2="8.382" y2="46.99" width="0.3048" layer="1"/>
-<wire x1="8.382" y1="46.99" x2="5.08" y2="46.99" width="0.3048" layer="1"/>
-<wire x1="31.75" y1="52.07" x2="13.462" y2="52.07" width="0.3048" layer="1"/>
+<wire x1="34.29" y1="54.61" x2="31.242" y2="51.562" width="0.3048" layer="1"/>
+<wire x1="12.446" y1="51.562" x2="7.874" y2="46.99" width="0.3048" layer="1"/>
+<wire x1="7.874" y1="46.99" x2="5.08" y2="46.99" width="0.3048" layer="1"/>
+<wire x1="31.242" y1="51.562" x2="12.446" y2="51.562" width="0.3048" layer="1"/>
 </signal>
 <signal name="BATT">
 <polygon width="0.3048" layer="1">
@@ -1589,6 +1592,13 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="8.89" y1="35.56" x2="8.89" y2="43.18" width="0.3048" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
